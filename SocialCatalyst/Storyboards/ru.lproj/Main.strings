@@ -1,0 +1,21 @@
+
+/* Class = "UINavigationItem"; title = "О приложении"; ObjectID = "4Gg-jH-GeD"; */
+"4Gg-jH-GeD.title" = "О приложении";
+
+/* Class = "UIButton"; normalTitle = "Написать разработчику"; ObjectID = "AGy-hL-KYs"; */
+"AGy-hL-KYs.normalTitle" = "Написать разработчику";
+
+/* Class = "UINavigationItem"; title = "Лента"; ObjectID = "Nuf-nN-Hav"; */
+"Nuf-nN-Hav.title" = "Лента";
+
+/* Class = "UILabel"; text = "Digger"; ObjectID = "VjG-ap-dO9"; */
+"VjG-ap-dO9.text" = "Digger";
+
+/* Class = "UILabel"; text = "\tDigger — издание о будущем, которое уже здесь. В фокусе нашего внимания — технологии, устройства, люди. Мы рассказываем, как они взаимодействуют.\n\n\tНас занимают следующие темы: гаджеты, сервисы, соцсети, VR и AR, искусственный интеллект, роботы, умные города и транспорт, интернет вещей, космос, игры, гик-культура и новая этика."; ObjectID = "nia-yU-YgL"; */
+"nia-yU-YgL.text" = "\tDigger — издание о будущем, которое уже здесь. В фокусе нашего внимания — технологии, устройства, люди. Мы рассказываем, как они взаимодействуют.\n\n\tНас занимают следующие темы: гаджеты, сервисы, соцсети, VR и AR, искусственный интеллект, роботы, умные города и транспорт, интернет вещей, космос, игры, гик-культура и новая этика.";
+
+/* Class = "UINavigationItem"; title = "Избранное"; ObjectID = "ohs-jG-lRn"; */
+"ohs-jG-lRn.title" = "Избранное";
+
+/* Class = "UIButton"; normalTitle = "Сделано в LWTS.ru"; ObjectID = "rwi-jG-Bkj"; */
+"rwi-jG-Bkj.normalTitle" = "Сделано в LWTS.ru";
