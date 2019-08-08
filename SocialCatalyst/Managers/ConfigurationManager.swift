@@ -13,9 +13,9 @@ class ConfigurationManager {
     
     private init() {}
     
-    let colorAppearance: ColorScheme = DiggerColorScheme()
+    let colorAppearance: ColorScheme = 
     
-    let configApiVK: ApiVKScheme = DiggerApiVKScheme()
+    let configApiVK: ApiVKScheme =
     
     func isEnabledAdsForPage(_ page: AdsModes) -> Bool {
         if configApiVK.adsModes.contains(page) {
