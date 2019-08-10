@@ -12,8 +12,8 @@ import ObjectMapper
 class LikesModel: Mappable {
     var count: Int!
     var userLikes: Bool!
-    var canLike: Bool!
-    var canPublish: Bool!
+    var canLike: Bool?
+    var canPublish: Bool?
     
     required init?(map: Map) {
         

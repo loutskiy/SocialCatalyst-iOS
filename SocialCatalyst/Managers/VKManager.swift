@@ -16,9 +16,9 @@ class VKManager {
         let request = VKRequest(
             method: "wall.get",
             parameters: [
-                VK_API_OWNER_ID: ConfigurationManager.shared.configApiVK.groupId,
+                VK_API_OWNER_ID: ConfigurationManager.shared.settings.groupId,
                 VK_API_COUNT: 20,
-                VK_API_ACCESS_TOKEN: ConfigurationManager.shared.configApiVK.serverKey,
+                VK_API_ACCESS_TOKEN: ConfigurationManager.shared.settings.serverKey,
                 VK_API_OFFSET: offset,
                 VK_API_EXTENDED: true
             ]
@@ -38,9 +38,9 @@ class VKManager {
         })
     }
     
-    static func getGroupInfo(groupId: Int = ConfigurationManager.shared.configApiVK.groupId, success: @escaping(_ group: VKGroup) -> Void, fail: @escaping(_ error: Error) -> Void) {
+    static func getGroupInfo(groupId: Int = ConfigurationManager.shared.settings.groupId, success: @escaping(_ group: VKGroup) -> Void, fail: @escaping(_ error: Error) -> Void) {
         let groupId = groupId < 0 ? groupId * -1 : groupId
-        VKApi.groups().getById([VK_API_GROUP_ID: groupId, VK_API_ACCESS_TOKEN: ConfigurationManager.shared.configApiVK.serverKey, VK_API_FIELDS: "description,photo_100"])?.execute(resultBlock: { (response) in
+        VKApi.groups().getById([VK_API_GROUP_ID: groupId, VK_API_ACCESS_TOKEN: ConfigurationManager.shared.settings.serverKey, VK_API_FIELDS: "description,photo_100"])?.execute(resultBlock: { (response) in
             if let groups = response?.parsedModel as? VKGroups, let group = groups.firstObject() {
                 success(group)
             }
@@ -54,7 +54,7 @@ class VKManager {
             method: "wall.getById",
             parameters: [
                 "posts": idsString,
-                VK_API_ACCESS_TOKEN: ConfigurationManager.shared.configApiVK.serverKey
+                VK_API_ACCESS_TOKEN: ConfigurationManager.shared.settings.serverKey
             ]
         )
         print(idsString)
@@ -75,8 +75,8 @@ class VKManager {
         let request = VKRequest(
             method: "wall.getComments",
             parameters: [
-                VK_API_ACCESS_TOKEN: ConfigurationManager.shared.configApiVK.serverKey,
-                VK_API_OWNER_ID: ConfigurationManager.shared.configApiVK.groupId,
+                VK_API_ACCESS_TOKEN: ConfigurationManager.shared.settings.serverKey,
+                VK_API_OWNER_ID: ConfigurationManager.shared.settings.groupId,
                 VK_API_POST_ID: id,
                 "need_likes": true,
                 VK_API_OFFSET: offset,
@@ -104,7 +104,7 @@ class VKManager {
         VKApi.users()?.get([
             VK_API_USER_IDS: id,
             VK_API_FIELDS: "photo_100",
-            VK_API_ACCESS_TOKEN: ConfigurationManager.shared.configApiVK.serverKey
+            VK_API_ACCESS_TOKEN: ConfigurationManager.shared.settings.serverKey
             ])?.execute(resultBlock: { (response) in
                 if let users = response?.parsedModel as? VKUsersArray {
                     if let user = users.firstObject() {

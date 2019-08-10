@@ -34,7 +34,7 @@ class CoreDataManager: NSObject {
         if let favourites = CDFavourite.mr_findAll() as? [CDFavourite] {
             var str = ""
             for favourite in favourites {
-                str = str + "\(ConfigurationManager.shared.configApiVK.groupId)_\(favourite.postId),"
+                str = str + "\(ConfigurationManager.shared.settings.groupId)_\(favourite.postId),"
             }
             return str
         }

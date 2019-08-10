@@ -111,6 +111,7 @@ PODS:
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - ObjectMapper (3.5.1)
+  - OneSignal (2.10.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - Appodeal (= 2.5.7)
   - MagicalRecord
   - ObjectMapper (~> 3.4)
+  - OneSignal (< 3.0, >= 2.6.2)
   - SDWebImage
   - SVProgressHUD
   - VK-ios-sdk
@@ -131,6 +133,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - MagicalRecord
     - ObjectMapper
+    - OneSignal
     - SDWebImage
     - SVProgressHUD
     - VK-ios-sdk
@@ -140,10 +143,11 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 39748deefe37a005f983722e433be2ddcdd83ae7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  OneSignal: 0f5ff711d9f25da54885e4ab06ef0abc221a46ef
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   VK-ios-sdk: 7fd48bc5aaa6b96c3197c1987eb6593f2ea67331
 
-PODFILE CHECKSUM: fc215666a6b1a3ea7c75072c712ca49c48595864
+PODFILE CHECKSUM: 8dfcdc4f56f4817e018d56a4be9614d588aefc59
 
 COCOAPODS: 1.6.1

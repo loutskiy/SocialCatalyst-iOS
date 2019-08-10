@@ -79,8 +79,8 @@ class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.likeButton.setImage(#imageLiteral(resourceName: "outline-heart"), for: .normal)
         }
-        cell.commentsButton.isHidden = ConfigurationManager.shared.configApiVK.availableComments ? false : true
-        cell.likeButton.isHidden = ConfigurationManager.shared.configApiVK.availableLikes ? false : true
+        cell.commentsButton.isHidden = ConfigurationManager.shared.settings.availableComments ? false : true
+        cell.likeButton.isHidden = ConfigurationManager.shared.settings.availableLikes ? false : true
         return cell
     }
     
@@ -89,13 +89,13 @@ class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         
         let post = news[indexPath.row]
         let currentPost = DataModelManager.getCurrentPostModelFromPost(post)
-        if ConfigurationManager.shared.configApiVK.postViewMode == PostTypes.readingMode || ConfigurationManager.shared.configApiVK.postViewMode == PostTypes.webMode || ConfigurationManager.shared.configApiVK.postViewMode == PostTypes.customJSRulesMode, let link = DataModelManager.getLinkFromAttachments(currentPost.attachments) {
+        if ConfigurationManager.shared.settings.postViewMode == PostTypes.readingMode || ConfigurationManager.shared.settings.postViewMode == PostTypes.webMode || ConfigurationManager.shared.settings.postViewMode == PostTypes.customJSRulesMode, let link = DataModelManager.getLinkFromAttachments(currentPost.attachments) {
             let vc = PFWebViewController(urlString: link.url)
             vc!.textFromLink = link.description
             vc!.titleFromLink = link.title
             vc!.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc!, animated: true)
-        } else if ConfigurationManager.shared.configApiVK.postViewMode != PostTypes.disable && ConfigurationManager.shared.configApiVK.availablePostView {
+        } else if ConfigurationManager.shared.settings.postViewMode != PostTypes.disable && ConfigurationManager.shared.settings.availablePostView {
             let vc = storyboard?.instantiateViewController(withIdentifier: "PostVC") as! PostVC
             vc.post = post
             vc.hidesBottomBarWhenPushed = true

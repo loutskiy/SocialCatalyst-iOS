@@ -41,8 +41,8 @@ class AboutVC: ViewController {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients([ConfigurationManager.shared.configApiVK.supportEmail])
-            mail.setSubject(ConfigurationManager.shared.configApiVK.emailSubject)
+            mail.setToRecipients([ConfigurationManager.shared.settings.supportEmail])
+            mail.setSubject(ConfigurationManager.shared.settings.emailSubject)
             
             present(mail, animated: true)
         } else {
@@ -51,7 +51,7 @@ class AboutVC: ViewController {
     }
     
     @IBAction func openLWTS(_ sender: Any) {
-        UIApplication.shared.open(URL(string: ConfigurationManager.shared.configApiVK.siteUrl)!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: ConfigurationManager.shared.settings.siteUrl)!, options: [:], completionHandler: nil)
     }
 }
 

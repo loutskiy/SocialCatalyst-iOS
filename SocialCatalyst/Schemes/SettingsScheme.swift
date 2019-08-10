@@ -1,5 +1,5 @@
 //
-//  ApiVKScheme.swift
+//  SettingsScheme.swift
 //  SocialCatalyst
 //
 //  Created by Михаил Луцкий on 06/08/2019.
@@ -25,7 +25,7 @@ enum AdsModes {
     case comments
 }
 
-protocol ApiVKScheme {
+protocol SettingsScheme {
     var appId: String { get set }
     var groupId: Int { get set }
     var serverKey: String { get set }
@@ -39,4 +39,6 @@ protocol ApiVKScheme {
     var availablePostView: Bool { get set }
     var adsModes: [AdsModes] { get set }
     var feedTitleName: String { get set }
+    var availablePushNotifications: Bool { get set }
+    var oneSignalKey: String { get set }
 }

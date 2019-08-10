@@ -59,8 +59,8 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
             postTextView.text = realPost.text
             commentsButton.setTitle("\(post.comments.count ?? 0)", for: .normal)
             likeButton.setTitle("\(post.likes.count ?? 0)", for: .normal)
-            commentsButton.isHidden = ConfigurationManager.shared.configApiVK.availableComments ? false : true
-            likeButton.isHidden = ConfigurationManager.shared.configApiVK.availableLikes ? false : true
+            commentsButton.isHidden = ConfigurationManager.shared.settings.availableComments ? false : true
+            likeButton.isHidden = ConfigurationManager.shared.settings.availableLikes ? false : true
             setBookmarkButton()
             
             if let userId = realPost.ownerId {

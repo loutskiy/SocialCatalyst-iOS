@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         if let link = DataModelManager.getLinkFromAttachments(currentPost.attachments) {
             linkUrl = link.url
         } else {
-            linkUrl = "https://vk.com/wall\(ConfigurationManager.shared.configApiVK.groupId)_\(post.id ?? 0)"
+            linkUrl = "https://vk.com/wall\(ConfigurationManager.shared.settings.groupId)_\(post.id ?? 0)"
         }
         let vc = UIActivityViewController(activityItems: [URL(string: linkUrl)!, currentPost.text ?? ""], applicationActivities: [])
         present(vc, animated: true)
