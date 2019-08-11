@@ -8,7 +8,7 @@
 
 import UIKit
 import SDWebImage
-//import Appodeal
+import Appodeal
 
 class CommentsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -37,7 +37,7 @@ class CommentsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         loadData()
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.comments) {
-//            Appodeal.showAd(.bannerBottom, rootViewController: self)
+            Appodeal.showAd(.bannerBottom, forPlacement: "COMMENTS", rootViewController: self)
         }
     }
     

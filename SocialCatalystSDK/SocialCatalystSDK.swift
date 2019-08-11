@@ -8,12 +8,9 @@
 
 import Foundation
 import VK_ios_sdk
-//import Appodeal
+import Appodeal
 import MagicalRecord
 //import OneSignal
-
-//let bundle = Bundle(identifier: "org.cocoapods.SocialCatalyst")
-//let storyboard = UIStoryboard(name: "Main", bundle: bundle)
 
 public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
     static let shared = SocialCatalystSDK()
@@ -34,8 +31,7 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
     public class func setSocialCatalystConfiguration(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, colorScheme: ColorScheme, settingsScheme: SettingsScheme, configuredWith: @escaping(_ window: UIWindow) -> Void) {
         SocialCatalystSDK.shared.colorAppearance = colorScheme
         SocialCatalystSDK.shared.settings = settingsScheme
-//        MagicalRecord.setupCoreDataStack(withStoreNamed: "Model")
-//
+        
         let managedObjectModel = NSManagedObjectModel.mergedModel(from: [getBundle()])
         MagicalRecord.setShouldAutoCreateManagedObjectModel(false)
         NSManagedObjectModel.mr_setDefaultManagedObjectModel(managedObjectModel)
@@ -44,10 +40,8 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
         MagicalRecord.setLoggingLevel(.off)
         VKSdk.initialize(withAppId: SocialCatalystSDK.shared.getSettings().appId)
 //
-//        DispatchQueue.main.async {
-////            Appodeal.setLogLevel(.verbose)
-//            Appodeal.initialize(withApiKey: SocialCatalystSDK.shared.getSettings().appodealKey, types: [.banner, .nativeAd])
-//        }
+        Appodeal.setLogLevel(.verbose)
+        Appodeal.initialize(withApiKey: SocialCatalystSDK.shared.getSettings().appodealKey, types: [.banner, .nativeAd])
         
         if SocialCatalystSDK.shared.getSettings().availablePushNotifications {
 //            let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
@@ -86,9 +80,7 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
     static func getBundle() -> Bundle {
         let resourceBundle = Bundle(identifier: "ru.lwts.SocialCatalystSDK")!
 //        let frameworkBundle = Bundle(for: SocialCatalystSDK.self)
-//        print(frameworkBundle)
 //        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("SocialCatalyst.bundle")
-//        print(bundleURL)
 //        let resourceBundle = Bundle(url: bundleURL!)!
         return resourceBundle
     }

@@ -3,10 +3,8 @@
   platform :ios, '10.0'
   use_frameworks!
 
-  target 'SocialCatalyst' do
-end
-
   target 'SocialCatalystSDK' do
+    pod 'Appodeal'
     pod "VK-ios-sdk"
     pod 'SDWebImage'
     pod 'ObjectMapper', '~> 3.4'

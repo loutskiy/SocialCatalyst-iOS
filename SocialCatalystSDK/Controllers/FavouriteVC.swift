@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Appodeal
+import Appodeal
 
 class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -24,7 +24,7 @@ class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.refreshControl = refreshControl
 
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.favourite) {
-//            Appodeal.showAd(.bannerBottom, rootViewController: self)
+            Appodeal.showAd(.bannerBottom, forPlacement: "FAVORITE", rootViewController: self)
         }
     }
     

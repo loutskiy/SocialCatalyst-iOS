@@ -8,7 +8,7 @@
 
 import UIKit
 import SDWebImage
-//import Appodeal
+import Appodeal
 
 class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -28,17 +28,13 @@ class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         loadData()
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.feed) {
-            print("SocialCatalystSDK.shared.isEnabledAdsForPage(.feed) ")
-//            Appodeal.showAd(.bannerBottom, forPlacement: "FEED", rootViewController: self)
+            Appodeal.showAd(.bannerBottom, forPlacement: "FEED", rootViewController: self)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
-        if SocialCatalystSDK.shared.isEnabledAdsForPage(.feed) {
-//            Appodeal.showAd(.bannerBottom, forPlacement: "FEED", rootViewController: self)
-        }
     }
     
     @objc func refreshData() {

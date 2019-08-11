@@ -8,7 +8,7 @@
 
 import UIKit
 import MessageUI
-//import Appodeal
+import Appodeal
 
 class AboutVC: ViewController {
 
@@ -33,7 +33,7 @@ class AboutVC: ViewController {
         })
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.about) {
-//            Appodeal.showAd(.bannerBottom, rootViewController: self)
+            Appodeal.showAd(.bannerBottom, forPlacement: "ABOUT", rootViewController: self)
         }
     }
 
