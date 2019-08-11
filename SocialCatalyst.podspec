@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
   spec.swift_version = "5.0"
   spec.name         = "SocialCatalyst"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "SocialCatalyst - SDK for quickly creating applications based on VKontakte groups"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Welcome to SocialCatalyst SDK! SocialCatalyst - SDK for quickly creating applica
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/loutskiy/SocialCatalyst-iOS.git", :tag => "0.0.1" }
+  spec.source       = { :git => "https://github.com/loutskiy/SocialCatalyst-iOS.git", :tag => "0.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -106,10 +106,11 @@ Welcome to SocialCatalyst SDK! SocialCatalyst - SDK for quickly creating applica
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "SocialCatalystSDK/Resources/*", "SocialCatalystSDK/Info.plist", "SocialCatalystSDK/Model.xcdatamodeld"
+  spec.resources = "SocialCatalystSDK/Resources/*", "SocialCatalystSDK/Model.xcdatamodeld"
 spec.resource_bundles = {
 "SocialCatalyst" => ["SocialCatalystSDK/Resources/*", "SocialCatalystSDK/Model.xcdatamodeld"]
 }
+spec.preserve_paths = "SocialCatalystSDK/Info.plist"
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
@@ -141,8 +142,7 @@ spec.dependency 'ObjectMapper', '~> 3.4'
     spec.dependency 'MagicalRecord'
     spec.dependency 'SVProgressHUD'
 
-  spec.pod_target_xcconfig = {
+spec.pod_target_xcconfig = {
   'INFOPLIST_FILE' => '${PODS_TARGET_SRCROOT}/SocialCatalystSDK/Info.plist'
   }
-
 end
