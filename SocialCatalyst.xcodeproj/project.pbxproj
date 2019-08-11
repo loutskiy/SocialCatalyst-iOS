@@ -149,7 +149,6 @@
 		C4AC425B22F77B540058EEBA /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		C4AC9F6222FC3D110032BAEC /* BackgroundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModel.swift; sourceTree = "<group>"; };
 		C4AC9F6422FC3DCC0032BAEC /* JSONStringToBackgroundTypeTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStringToBackgroundTypeTransform.swift; sourceTree = "<group>"; };
-		C4AC9F6B22FCDCFB0032BAEC /* SocialCatalyst-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialCatalyst-Bridging-Header.h"; path = "SocialCatalyst/SocialCatalyst-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4AC9F7E22FD928B0032BAEC /* MediaAttachmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAttachmentCell.swift; sourceTree = "<group>"; };
 		C4AC9F7F22FD928B0032BAEC /* MediaAttachmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaAttachmentCell.xib; sourceTree = "<group>"; };
 		C4AC9F8222FD98F00032BAEC /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
@@ -330,7 +329,6 @@
 			children = (
 				C41A04F82300281400349761 /* PFWebViewController.h */,
 				C41A04F72300281400349761 /* PFWebViewController.m */,
-				C4AC9F6B22FCDCFB0032BAEC /* SocialCatalyst-Bridging-Header.h */,
 			);
 			name = Reader;
 			path = ..;

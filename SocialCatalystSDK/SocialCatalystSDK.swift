@@ -28,6 +28,13 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
         return false
     }
     
+    /// Function for initialize SocialCatalystSDK. Place this to your AppDelegate
+    ///
+    /// - Parameters:
+    ///   - launchOptions: LaunchOptions from AppDelegate
+    ///   - colorScheme: Your color scheme
+    ///   - settingsScheme: Your settings scheme
+    ///   - configuredWith: uiwindow object for display ui of SDK
     public class func setSocialCatalystConfiguration(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, colorScheme: ColorScheme, settingsScheme: SettingsScheme, configuredWith: @escaping(_ window: UIWindow) -> Void) {
         SocialCatalystSDK.shared.colorAppearance = colorScheme
         SocialCatalystSDK.shared.settings = settingsScheme
@@ -78,11 +85,14 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
     }
     
     static func getBundle() -> Bundle {
-        let resourceBundle = Bundle(identifier: "ru.lwts.SocialCatalystSDK")!
-//        let frameworkBundle = Bundle(for: SocialCatalystSDK.self)
-//        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("SocialCatalyst.bundle")
-//        let resourceBundle = Bundle(url: bundleURL!)!
-        return resourceBundle
+        if let resourceBundle = Bundle(identifier: "ru.lwts.SocialCatalystSDK") {
+            return resourceBundle
+        } else {
+            let frameworkBundle = Bundle(for: SocialCatalystSDK.self)
+            let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("SocialCatalyst.bundle")
+            let resourceBundle = Bundle(url: bundleURL!)!
+            return resourceBundle
+        }
     }
     
     @objc private func applicationWillTerminate() {

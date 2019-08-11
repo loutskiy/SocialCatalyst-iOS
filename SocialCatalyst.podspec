@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
   spec.swift_version = "5.0"
   spec.name         = "SocialCatalyst"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.7"
   spec.summary      = "SocialCatalyst - SDK for quickly creating applications based on VKontakte groups"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Welcome to SocialCatalyst SDK! SocialCatalyst - SDK for quickly creating applica
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/loutskiy/SocialCatalyst-iOS.git", :tag => "0.0.6" }
+  spec.source       = { :git => "https://github.com/loutskiy/SocialCatalyst-iOS.git", :tag => "0.0.7" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

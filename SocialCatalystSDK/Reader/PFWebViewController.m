@@ -205,14 +205,19 @@
 
 - (WKWebViewConfiguration *)configuration {
     // Load reader mode js script
-    NSBundle *bundle = [NSBundle bundleWithIdentifier:@"ru.lwts.SocialCatalystSDK"];
-    NSURL *url = [bundle URLForResource:@"PFWebViewController" withExtension:@"bundle"];
-    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+    NSBundle *bundle;
+    if ( [NSBundle bundleWithIdentifier:@"ru.lwts.SocialCatalystSDK"] != nil) {
+        bundle = [NSBundle bundleWithIdentifier:@"ru.lwts.SocialCatalystSDK"];
+    } else {
+        NSBundle *frameworkBundle = [NSBundle bundleForClass:self.class];
+        NSURL *bundleURL = [frameworkBundle.resourceURL URLByAppendingPathComponent:@"SocialCatalyst.bundle"];
+        bundle = [NSBundle bundleWithURL:bundleURL];
+    }
     
-    NSString *readerScriptFilePath = [imageBundle pathForResource:@"safari-reader" ofType:@"js"];
-    NSString *readerCheckScriptFilePath = [imageBundle pathForResource:@"safari-reader-check" ofType:@"js"];
+    NSString *readerScriptFilePath = [bundle pathForResource:@"safari-reader" ofType:@"js"];
+    NSString *readerCheckScriptFilePath = [bundle pathForResource:@"safari-reader-check" ofType:@"js"];
     
-    NSString *indexPageFilePath = [imageBundle pathForResource:@"index" ofType:@"html"];
+    NSString *indexPageFilePath = [bundle pathForResource:@"index" ofType:@"html"];
     
     // Load HTML for reader mode
     readerHTMLString = [[NSString alloc] initWithContentsOfFile:indexPageFilePath encoding:NSUTF8StringEncoding error:nil];
