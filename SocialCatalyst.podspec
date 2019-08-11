@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   #  can feel like a chore to fill in it's definitely to your advantage. The
   #  summary should be tweet-length, and the description more in depth.
   #
-
+  spec.swift_version = "5.0"
   spec.name         = "SocialCatalyst"
   spec.version      = "0.0.1"
   spec.summary      = "SocialCatalyst - SDK for quickly creating applications based on VKontakte groups"
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-Welcome to SocialCatalyst SDK!
+Welcome to SocialCatalyst SDK! SocialCatalyst - SDK for quickly creating applications based on VKontakte groups. It's very easy to use
                    DESC
 
   spec.homepage     = "http://lwts.ru"
@@ -106,7 +106,7 @@ Welcome to SocialCatalyst SDK!
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "SocialCatalystSDK/Resources/*", "SocialCatalystSDK/Model.xcdatamodeld"
+  spec.resources = "SocialCatalystSDK/Resources/*", "SocialCatalystSDK/Info.plist", "SocialCatalystSDK/Model.xcdatamodeld"
 spec.resource_bundles = {
 "SocialCatalyst" => ["SocialCatalystSDK/Resources/*", "SocialCatalystSDK/Model.xcdatamodeld"]
 }
