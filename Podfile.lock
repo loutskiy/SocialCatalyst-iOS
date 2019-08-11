@@ -1,153 +1,36 @@
 PODS:
-  - Appodeal (2.5.7):
-    - Appodeal/Full (= 2.5.7)
-  - Appodeal/AdColonyAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/AdExchangeAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/AmazonAdsAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/AppLovinAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/Banner (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/AmazonAdsAdapter
-    - Appodeal/AppLovinAdapter
-    - Appodeal/FacebookAudienceAdapter
-    - Appodeal/GoogleAdMobAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/InnerActiveAdapter
-    - Appodeal/MyTargetAdapter
-    - Appodeal/OpenXAdapter
-    - Appodeal/SmaatoAdapter
-    - Appodeal/StartAppAdapter
-    - Appodeal/YandexAdapter
-  - Appodeal/ChartboostAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Core (2.5.7)
-  - Appodeal/FacebookAudienceAdapter (2.5.7):
-    - Appodeal/Core
-    - FBSDKCoreKit/Basics
-  - Appodeal/FlurryAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Full (2.5.7):
-    - Appodeal/Banner
-    - Appodeal/Core
-    - Appodeal/Interstitial
-    - Appodeal/Native
-    - Appodeal/Video
-  - Appodeal/GoogleAdMobAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/InMobiAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/InnerActiveAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/Interstitial (2.5.7):
-    - Appodeal/AmazonAdsAdapter
-    - Appodeal/FacebookAudienceAdapter
-    - Appodeal/GoogleAdMobAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/Video
-    - Appodeal/YandexAdapter
-  - Appodeal/IronSource (2.5.7):
-    - Appodeal/Core
-  - Appodeal/MintegralAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/MyTargetAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Native (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/AppLovinAdapter
-    - Appodeal/FacebookAudienceAdapter
-    - Appodeal/FlurryAdapter
-    - Appodeal/GoogleAdMobAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/InnerActiveAdapter
-    - Appodeal/MyTargetAdapter
-    - Appodeal/PubnativeAdapter
-    - Appodeal/SmaatoAdapter
-    - Appodeal/StartAppAdapter
-  - Appodeal/OpenXAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/PubnativeAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/SmaatoAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/StartAppAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/TapjoyAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/UnityAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Video (2.5.7):
-    - Appodeal/AdColonyAdapter
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/AppLovinAdapter
-    - Appodeal/ChartboostAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/InnerActiveAdapter
-    - Appodeal/IronSource
-    - Appodeal/MintegralAdapter
-    - Appodeal/MyTargetAdapter
-    - Appodeal/OpenXAdapter
-    - Appodeal/SmaatoAdapter
-    - Appodeal/StartAppAdapter
-    - Appodeal/TapjoyAdapter
-    - Appodeal/UnityAdapter
-    - Appodeal/VungleAdapter
-  - Appodeal/VungleAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/YandexAdapter (2.5.7):
-    - Appodeal/Core
-  - FBSDKCoreKit/Basics (5.3.0)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - ObjectMapper (3.5.1)
-  - OneSignal (2.10.0)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
   - SVProgressHUD (2.2.5)
   - VK-ios-sdk (1.4.6)
 
 DEPENDENCIES:
-  - Appodeal (= 2.5.7)
   - MagicalRecord
   - ObjectMapper (~> 3.4)
-  - OneSignal (< 3.0, >= 2.6.2)
   - SDWebImage
   - SVProgressHUD
   - VK-ios-sdk
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Appodeal
-    - FBSDKCoreKit
     - MagicalRecord
     - ObjectMapper
-    - OneSignal
     - SDWebImage
     - SVProgressHUD
     - VK-ios-sdk
 
 SPEC CHECKSUMS:
-  Appodeal: 33ac7acfa1ea711c8b403e194bdb8d2b0e19d538
-  FBSDKCoreKit: 39748deefe37a005f983722e433be2ddcdd83ae7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
-  OneSignal: 0f5ff711d9f25da54885e4ab06ef0abc221a46ef
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   VK-ios-sdk: 7fd48bc5aaa6b96c3197c1987eb6593f2ea67331
 
-PODFILE CHECKSUM: 8dfcdc4f56f4817e018d56a4be9614d588aefc59
+PODFILE CHECKSUM: 2d977eb848940a558b911cb89e6f2757c46d94ab
 
 COCOAPODS: 1.6.1
