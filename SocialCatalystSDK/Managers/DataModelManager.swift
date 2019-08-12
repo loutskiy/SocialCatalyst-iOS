@@ -10,6 +10,11 @@ import Foundation
 
 class DataModelManager {
     
+    
+    /// Finding a link to photo in attachment object, priority object from PhotoModel
+    ///
+    /// - Parameter attachments: array with Attachment models
+    /// - Returns: String or nil if nothing founded
     class func getPhotoFromAttachments(_ attachments: [AttachmentModel]?) -> String? {
         var image: String?
         if let attachments = attachments {
@@ -28,21 +33,46 @@ class DataModelManager {
     }
     
     class func getBestQualityPhotoFromObject(_ object: PhotoModel) -> String? {
-        if let photo2560 = object.photo2560 {
-            return photo2560
-        } else if let photo1280 = object.photo1280 {
-            return photo1280
-        } else if let photo807 = object.photo807 {
-            return photo807
-        } else if let photo604 = object.photo604 {
-            return photo604
-        } else if let photo130 = object.photo130 {
-            return photo130
-        } else if let photo75 = object.photo75 {
-            return photo75
-        } else {
-            return nil
+        return forloopSearchFirstNonnullObjectInStringArray(
+            [
+                object.photo2560,
+                object.photo1280,
+                object.photo807,
+                object.photo604,
+                object.photo130,
+                object.photo75
+            ]
+        )
+    }
+    
+    class func getBestQualityPhotoFromVideoObject(_ object: VideoModel) -> String? {
+        return forloopSearchFirstNonnullObjectInStringArray(
+            [
+                object.firstFrame1280,
+                object.firstFrame800,
+                object.firstFrame640,
+                object.firstFrame320,
+                object.firstFrame130,
+                object.photo1280,
+                object.photo800,
+                object.photo640,
+                object.photo320,
+                object.photo130
+            ]
+        )
+    }
+    
+    /// Cycle for finding a first nonnull string in Array (FIFO pattern)
+    ///
+    /// - Parameter array: Array of strings
+    /// - Returns: String or nil if nothing founded
+    private class func forloopSearchFirstNonnullObjectInStringArray(_ array: [String?]) -> String? {
+        for item in array {
+            if let i = item {
+                return i
+            }
         }
+        return nil
     }
     
     class func getLinkFromAttachments(_ attachments: [AttachmentModel]?) -> LinkModel? {

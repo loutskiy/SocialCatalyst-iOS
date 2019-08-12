@@ -28,8 +28,12 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "Запись"
+        
+        tableView.register(UINib(nibName: "AudioAttachmentCell", bundle: SocialCatalystSDK.getBundle()), forCellReuseIdentifier: "AudioAttachmentCell")
+        tableView.register(UINib(nibName: "MediaAttachmentCell", bundle: SocialCatalystSDK.getBundle()), forCellReuseIdentifier: "MediaAttachmentCell")
+        tableView.register(UINib(nibName: "LinkAttachmentCell", bundle: SocialCatalystSDK.getBundle()), forCellReuseIdentifier: "LinkAttachmentCell")
+        
         setUIFromPost()
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.post) {
@@ -61,6 +65,8 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
             likeButton.setTitle("\(post.likes.count ?? 0)", for: .normal)
             commentsButton.isHidden = SocialCatalystSDK.shared.getSettings().availableComments ? false : true
             likeButton.isHidden = SocialCatalystSDK.shared.getSettings().availableLikes ? false : true
+            attachments = realPost.attachments ?? [AttachmentModel]()
+            tableView.reloadData()
             setBookmarkButton()
             
             if let userId = realPost.ownerId {
@@ -103,6 +109,69 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let attachment = attachments[indexPath.row]
+        if let type = attachment.type {
+            switch type {
+            case .photo:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MediaAttachmentCell") as! MediaAttachmentCell
+                cell.contentTypeImageView.image = UIImage(named: "photo_attach", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)
+                cell.previewImageView.sd_setImage(with: URL(string: DataModelManager.getBestQualityPhotoFromObject(attachment.photo!)!), completed: nil)
+                return cell
+            case .postedPhoto:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MediaAttachmentCell") as! MediaAttachmentCell
+                cell.contentTypeImageView.image = UIImage(named: "photo_attach", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)
+                cell.previewImageView.sd_setImage(with: URL(string: attachment.postedPhoto!.photo604), completed: nil)
+                return cell
+            case .video:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MediaAttachmentCell") as! MediaAttachmentCell
+                cell.contentTypeImageView.image = UIImage(named: "film_attach", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)
+                cell.previewImageView.sd_setImage(with: URL(string: DataModelManager.getBestQualityPhotoFromVideoObject(attachment.video!)!), completed: nil)
+                return cell
+            case .audio:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AudioAttachmentCell") as! AudioAttachmentCell
+                cell.trackNameLabel.text = attachment.audio!.title
+                cell.trackAuthorLabel.text = attachment.audio!.artist
+                cell.durationLabel.text = "\(attachment.audio!.duration ?? 0)"
+                return cell
+            case .doc:
+                break
+            case .graffiti:
+                break
+            case .link:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LinkAttachmentCell") as! LinkAttachmentCell
+                cell.linkTitleLabel.text = attachment.link!.title
+                cell.siteUrlLabel.text = attachment.link!.url
+                return cell
+            case .note:
+                break
+            case .app:
+                break
+            case .poll:
+                break
+            case .page:
+                break
+            case .album:
+                break
+            case .photosList:
+                break
+            case .market:
+                break
+            case .marketAlbum:
+                break
+            case .sticker:
+                break
+            case .prettyCards:
+                break
+            case .event:
+                break
+            case .unknown:
+                let cell = UITableViewCell()
+                return cell
+            }
+        } else {
+            let cell = UITableViewCell()
+            return cell
+        }
         let cell = UITableViewCell()
         return cell
     }

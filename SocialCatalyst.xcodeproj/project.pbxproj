@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9E0A9F42142879384A9F71EF /* Pods_SocialCatalystSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24B9F100329713E5327249E /* Pods_SocialCatalystSDK.framework */; };
+		C4085BDD2301EB1500FDCA7B /* LinkAttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4085BDB2301EB1500FDCA7B /* LinkAttachmentCell.swift */; };
+		C4085BDE2301EB1500FDCA7B /* LinkAttachmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4085BDC2301EB1500FDCA7B /* LinkAttachmentCell.xib */; };
+		C4085BE12301EB3D00FDCA7B /* AudioAttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4085BDF2301EB3D00FDCA7B /* AudioAttachmentCell.swift */; };
+		C4085BE22301EB3D00FDCA7B /* AudioAttachmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4085BE02301EB3D00FDCA7B /* AudioAttachmentCell.xib */; };
 		C40FA36723008152004DBAD2 /* safari-reader-check.js in Resources */ = {isa = PBXBuildFile; fileRef = C40FA36423008152004DBAD2 /* safari-reader-check.js */; };
 		C40FA36823008152004DBAD2 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = C40FA36523008152004DBAD2 /* safari-reader.js */; };
 		C40FA36923008152004DBAD2 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C40FA36623008152004DBAD2 /* index.html */; };
@@ -29,7 +33,6 @@
 		C4400F6B22FF46F9003698ED /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC425B22F77B540058EEBA /* DateManager.swift */; };
 		C4400F6C22FF46F9003698ED /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4218DC422FA1ED900A643FD /* CoreDataManager.swift */; };
 		C4400F6D22FF46F9003698ED /* DataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4218DCD22FAE51B00A643FD /* DataModelManager.swift */; };
-		C4400F6E22FF46F9003698ED /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4400F4D22FF3819003698ED /* Config.swift */; };
 		C4400F6F22FF46FB003698ED /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0261922F4E1FE006BD403 /* ColorScheme.swift */; };
 		C4400F7022FF46FB003698ED /* SettingsScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4218DBA22F9EF0400A643FD /* SettingsScheme.swift */; };
 		C4400F7322FF4703003698ED /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0261122F4AFA7006BD403 /* NewsVC.swift */; };
@@ -90,6 +93,10 @@
 		9572057A6751E32C22D0FE33 /* Pods-SocialCatalystSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialCatalystSDK.debug.xcconfig"; path = "Target Support Files/Pods-SocialCatalystSDK/Pods-SocialCatalystSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		987226A26A3F93F45AFC430C /* Pods-SocialCatalystSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialCatalystSDK.release.xcconfig"; path = "Target Support Files/Pods-SocialCatalystSDK/Pods-SocialCatalystSDK.release.xcconfig"; sourceTree = "<group>"; };
 		ABC2492168D1C2A85EAAA977 /* Pods_SocialCatalyst_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialCatalyst_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4085BDB2301EB1500FDCA7B /* LinkAttachmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkAttachmentCell.swift; path = ../Resources/LinkAttachmentCell.swift; sourceTree = "<group>"; };
+		C4085BDC2301EB1500FDCA7B /* LinkAttachmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkAttachmentCell.xib; sourceTree = "<group>"; };
+		C4085BDF2301EB3D00FDCA7B /* AudioAttachmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioAttachmentCell.swift; path = ../Resources/AudioAttachmentCell.swift; sourceTree = "<group>"; };
+		C4085BE02301EB3D00FDCA7B /* AudioAttachmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioAttachmentCell.xib; sourceTree = "<group>"; };
 		C40FA36423008152004DBAD2 /* safari-reader-check.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader-check.js"; sourceTree = "<group>"; };
 		C40FA36523008152004DBAD2 /* safari-reader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader.js"; sourceTree = "<group>"; };
 		C40FA36623008152004DBAD2 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -140,7 +147,6 @@
 		C4400F4722FF2A50003698ED /* CategoryMarketItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMarketItemModel.swift; sourceTree = "<group>"; };
 		C4400F4922FF2A7F003698ED /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		C4400F4B22FF2B20003698ED /* JSONIntToAvailabilityTypeTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONIntToAvailabilityTypeTransform.swift; sourceTree = "<group>"; };
-		C4400F4D22FF3819003698ED /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C4400F5422FF46CC003698ED /* SocialCatalystSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocialCatalystSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4400F5622FF46CC003698ED /* SocialCatalystSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialCatalystSDK.h; sourceTree = "<group>"; };
 		C4400F5722FF46CC003698ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -242,7 +248,6 @@
 				C4AC425B22F77B540058EEBA /* DateManager.swift */,
 				C4218DC422FA1ED900A643FD /* CoreDataManager.swift */,
 				C4218DCD22FAE51B00A643FD /* DataModelManager.swift */,
-				C4400F4D22FF3819003698ED /* Config.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -250,6 +255,8 @@
 		C4218DC922FAE31D00A643FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C4085BDF2301EB3D00FDCA7B /* AudioAttachmentCell.swift */,
+				C4085BDB2301EB1500FDCA7B /* LinkAttachmentCell.swift */,
 				C4E0261322F4D88E006BD403 /* PostCell.swift */,
 				C4218DEA22FB16BD00A643FD /* CommentCell.swift */,
 				C4AC9F7E22FD928B0032BAEC /* MediaAttachmentCell.swift */,
@@ -271,13 +278,16 @@
 				C4E0261422F4D88E006BD403 /* PostCell.xib */,
 				C41A04F523001F4600349761 /* CommentCell.xib */,
 				C4AC9F7F22FD928B0032BAEC /* MediaAttachmentCell.xib */,
+				C4085BDC2301EB1500FDCA7B /* LinkAttachmentCell.xib */,
+				C4085BE02301EB3D00FDCA7B /* AudioAttachmentCell.xib */,
 				C40FA36623008152004DBAD2 /* index.html */,
 				C40FA36423008152004DBAD2 /* safari-reader-check.js */,
 				C40FA36523008152004DBAD2 /* safari-reader.js */,
 				C4E0260622F49B20006BD403 /* Assets.xcassets */,
 			);
-			path = Resources;
-			sourceTree = "<group>";
+			name = Resources;
+			path = /Users/mikhailluckij/XcodeProjects/VKGroupWallProject/SocialCatalystSDK/Resources;
+			sourceTree = "<absolute>";
 		};
 		C4218DCC22FAE3AC00A643FD /* Schemes */ = {
 			isa = PBXGroup;
@@ -470,12 +480,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41A04FE23002E6000349761 /* Main.storyboard in Resources */,
+				C4085BE22301EB3D00FDCA7B /* AudioAttachmentCell.xib in Resources */,
 				C4400F7D22FF4707003698ED /* MediaAttachmentCell.xib in Resources */,
 				C4400F7922FF4707003698ED /* PostCell.xib in Resources */,
 				C4400FA422FF4721003698ED /* Assets.xcassets in Resources */,
 				C40FA36823008152004DBAD2 /* safari-reader.js in Resources */,
 				C40FA36923008152004DBAD2 /* index.html in Resources */,
 				C40FA36723008152004DBAD2 /* safari-reader-check.js in Resources */,
+				C4085BDE2301EB1500FDCA7B /* LinkAttachmentCell.xib in Resources */,
 				C41A04F623001F4600349761 /* CommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,12 +560,13 @@
 				C4400F6422FF46F3003698ED /* JSONStringToImageTypeTransform.swift in Sources */,
 				C4400F9D22FF470D003698ED /* StickerModel.swift in Sources */,
 				C4400F9222FF470D003698ED /* PollModel.swift in Sources */,
+				C4085BDD2301EB1500FDCA7B /* LinkAttachmentCell.swift in Sources */,
 				C4400F7A22FF4707003698ED /* CommentCell.swift in Sources */,
 				C4400F8622FF470D003698ED /* AttachmentModel.swift in Sources */,
+				C4085BE12301EB3D00FDCA7B /* AudioAttachmentCell.swift in Sources */,
 				C4400F8122FF470D003698ED /* CommentModel.swift in Sources */,
 				C4400F6122FF46EC003698ED /* ViewController.swift in Sources */,
 				C4400F8E22FF470D003698ED /* DocumentModel.swift in Sources */,
-				C4400F6E22FF46F9003698ED /* Config.swift in Sources */,
 				C4400F9522FF470D003698ED /* PageModel.swift in Sources */,
 				C4400F9A22FF470D003698ED /* CategoryMarketItemModel.swift in Sources */,
 				C4400F8922FF470D003698ED /* AppModel.swift in Sources */,

@@ -14,6 +14,4 @@ FOUNDATION_EXPORT double SocialCatalystSDKVersionNumber;
 //! Project version string for SocialCatalystSDK.
 FOUNDATION_EXPORT const unsigned char SocialCatalystSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <SocialCatalystSDK/PublicHeader.h>
-
 #import "PFWebViewController.h"
