@@ -84,6 +84,7 @@
 		C4400FA322FF471C003698ED /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC425922F77A980058EEBA /* String+extension.swift */; };
 		C4400FA422FF4721003698ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E0260622F49B20006BD403 /* Assets.xcassets */; };
 		C4400FA522FF4723003698ED /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4218DC122FA1D8E00A643FD /* Model.xcdatamodeld */; };
+		C456B2222302F7E400AEBCD1 /* TopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B2212302F7E400AEBCD1 /* TopicModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +151,7 @@
 		C4400F5422FF46CC003698ED /* SocialCatalystSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocialCatalystSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4400F5622FF46CC003698ED /* SocialCatalystSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialCatalystSDK.h; sourceTree = "<group>"; };
 		C4400F5722FF46CC003698ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C456B2212302F7E400AEBCD1 /* TopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicModel.swift; sourceTree = "<group>"; };
 		C4AC425722F770720058EEBA /* VKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKManager.swift; sourceTree = "<group>"; };
 		C4AC425922F77A980058EEBA /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		C4AC425B22F77B540058EEBA /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				C4AC9F8E22FD9E800032BAEC /* PrettyCardsModel.swift */,
 				C4AC9F9022FD9EAF0032BAEC /* PrettyCardModel.swift */,
 				C4AC9F9222FD9FBE0032BAEC /* EventModel.swift */,
+				C456B2212302F7E400AEBCD1 /* TopicModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				C4400F9622FF470D003698ED /* AlbumModel.swift in Sources */,
 				C4400F9022FF470D003698ED /* AudioMessageModel.swift in Sources */,
 				C4400F9C22FF470D003698ED /* MarketAlbumModel.swift in Sources */,
+				C456B2222302F7E400AEBCD1 /* TopicModel.swift in Sources */,
 				C4400F9922FF470D003698ED /* CurrencyModel.swift in Sources */,
 				C4400F9322FF470D003698ED /* AnswerModel.swift in Sources */,
 				C4400F7822FF4707003698ED /* PostCell.swift in Sources */,
