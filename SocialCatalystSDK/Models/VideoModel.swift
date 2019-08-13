@@ -39,4 +39,12 @@ class VideoModel {
     var live: Bool?
     var upcoming: Bool?
     var isFavourite: Bool!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        
+    }
 }

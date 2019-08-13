@@ -14,4 +14,15 @@ class PostedPhotoModel {
     var ownerId: Int!
     var photo130: String!
     var photo604: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        photo130 <- map["photo_130"]
+        photo604 <- map["photo_604"]
+    }
 }

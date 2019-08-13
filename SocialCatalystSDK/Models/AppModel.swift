@@ -14,4 +14,15 @@ class AppModel {
     var name: String!
     var photo130: String!
     var photo604: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        photo130 <- map["photo_130"]
+        photo604 <- map["photo_604"]
+    }
 }
