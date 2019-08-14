@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import LNPopupController
 import SDWebImage
 import MediaPlayer
 
-class MusicPlayerVC: UIViewController {
+class MusicPlayerVC: ViewController {
     
     @IBOutlet weak var albumArtImageView: UIImageView!
     @IBOutlet weak var songNameLabel: UILabel!
@@ -34,11 +33,11 @@ class MusicPlayerVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        pauseButton = UIBarButtonItem(image: UIImage(named: "pause"), style: .plain, target: self, action: #selector(pauseSong))
+        pauseButton = UIBarButtonItem(image: UIImage(named: "pause", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), style: .plain, target: self, action: #selector(pauseSong))
         pauseButton.accessibilityLabel = NSLocalizedString("Pause", comment: "")
-        playButton = UIBarButtonItem(image: UIImage(named: "play"), style: .plain, target: self, action: #selector(playSong))
+        playButton = UIBarButtonItem(image: UIImage(named: "play", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), style: .plain, target: self, action: #selector(playSong))
 
-        nextButton = UIBarButtonItem(image: UIImage(named: "nextFwd"), style: .plain, target: self, action: #selector(nextSong))
+        nextButton = UIBarButtonItem(image: UIImage(named: "nextFwd", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), style: .plain, target: self, action: #selector(nextSong))
         nextButton.accessibilityLabel = NSLocalizedString("Next Track", comment: "")
         
         if UserDefaults.standard.object(forKey: __kMAIN__PopupSettingsBarStyle) as? LNPopupBarStyle == LNPopupBarStyle.compact || ProcessInfo.processInfo.operatingSystemVersion.majorVersion < 10 {
@@ -90,6 +89,7 @@ class MusicPlayerVC: UIViewController {
         songNameLabel.text = songTitle
         albumNameLabel.text = albumTitle
         albumArtImageView.image = albumArt
+        albumNameLabel.textColor = SocialCatalystSDK.shared.getColorAppearance().buttonColor
         
         changeButtonStyle(button: shuffleButton, state: AudioPlayer.defaultPlayer.isShuffleEnabled)
         changeButtonStyle(button: repeatButton, state: AudioPlayer.defaultPlayer.isRepeatEnabled)
@@ -99,21 +99,21 @@ class MusicPlayerVC: UIViewController {
     }
 
     func updatePlayButton() {
-        if fullPlayerPlayPauseButton.imageView?.image == #imageLiteral(resourceName: "nowPlaying_play") {
-            fullPlayerPlayPauseButton.setImage(#imageLiteral(resourceName: "nowPlaying_pause"), for: UIControlState())
+        if fullPlayerPlayPauseButton.imageView?.image == UIImage(named: "nowPlaying_play", in: SocialCatalystSDK.getBundle(), compatibleWith: nil) {
+            fullPlayerPlayPauseButton.setImage(UIImage(named: "nowPlaying_pause", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), for: UIControl.State())
             playSong()
         } else {
-            fullPlayerPlayPauseButton.setImage(#imageLiteral(resourceName: "nowPlaying_play"), for: UIControlState())
+            fullPlayerPlayPauseButton.setImage(UIImage(named: "nowPlaying_play", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), for: UIControl.State())
             pauseSong()
         }
     }
     
     func setPlayButtonIconToPause() {
-        fullPlayerPlayPauseButton.setImage(#imageLiteral(resourceName: "nowPlaying_pause"), for: UIControlState())
+        fullPlayerPlayPauseButton.setImage(UIImage(named: "nowPlaying_pause", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), for: UIControl.State())
     }
     
     func setPlayButtonIconToPlay() {
-        fullPlayerPlayPauseButton.setImage(#imageLiteral(resourceName: "nowPlaying_play"), for: UIControlState())
+        fullPlayerPlayPauseButton.setImage(UIImage(named: "nowPlaying_play", in: SocialCatalystSDK.getBundle(), compatibleWith: nil), for: UIControl.State())
     }
     
     //Play pause songs
@@ -153,8 +153,8 @@ class MusicPlayerVC: UIViewController {
     @IBAction func volumeAction(_ sender: Any) {
     }
     
-    func updateCurrentSong (_ song: VMSongModel) {
-        self.albumArt = #imageLiteral(resourceName: "AlbumPlaceholder")
+    func updateCurrentSong (_ song: AudioModel) {
+        self.albumArt = UIImage(named: "AlbumPlaceholder", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)!
         self.songTitle = song.title
         self.albumTitle = song.artist
         self.popupItem.progress = 0
@@ -163,14 +163,16 @@ class MusicPlayerVC: UIViewController {
         DispatchQueue.global(qos: .background).async {
             AudioPlayer.defaultPlayer.playAudio(fromURL: sourceURL)
         }
-        VMusic.shared.getTrackArtwork(artist:song.artist, track: song.title, success: {
+        VKManager.sendRequestToLastFM(artist: song.artist, track: song.title, success: {
             path in
             print("path")
             print(path)
-            SDWebImageDownloader.shared().downloadImage(with: URL(string: path), options: [], progress: nil, completed: { (image, data, error, _) in
-                self.albumArt = image ?? #imageLiteral(resourceName: "AlbumPlaceholder")
+            SDWebImageDownloader.shared.downloadImage(with: URL(string: path), options: [], progress: nil, completed: { (image, data, error, _) in
+                self.albumArt = image ?? UIImage(named: "AlbumPlaceholder", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)!
             })
-        })
+        }) { (err) in
+            self.showAlert(title: "Ошибка", message: err.localizedDescription)
+        }
         
     }
     
@@ -187,12 +189,12 @@ class MusicPlayerVC: UIViewController {
     
     func changeButtonStyle ( button: UIButton, state: Bool) {
         if state {
-            button.backgroundColor = .VMusicBlue
+            button.backgroundColor = SocialCatalystSDK.shared.getColorAppearance().buttonColor
             button.tintColor = .white
             button.layer.cornerRadius = 5
         } else {
             button.backgroundColor = .clear
-            button.tintColor = .VMusicBlue
+            button.tintColor = SocialCatalystSDK.shared.getColorAppearance().buttonColor
             button.layer.cornerRadius = 0
         }
     }
@@ -209,11 +211,11 @@ extension MusicPlayerVC: AudioPlayerDelegate {
         durationLabel.text = "-\((Int(AudioPlayer.defaultPlayer.currentAudio.duration) - Int(time)).toAudioString)"
     }
     
-    func playerWillPlayNextAudio(_ song: VMSongModel) {
+    func playerWillPlayNextAudio(_ song: AudioModel) {
         updateCurrentSong(song)
     }
     
-    func playerWillPlayPreviousAudio(_ song: VMSongModel) {
+    func playerWillPlayPreviousAudio(_ song: AudioModel) {
         updateCurrentSong(song)
     }
     

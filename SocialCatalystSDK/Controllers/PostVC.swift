@@ -16,6 +16,8 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     var post: PostModel!
     var attachments = [AttachmentModel]()
     
+    var currentIndexPathRow = -1
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var postDateLabel: UILabel!
@@ -131,7 +133,7 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioAttachmentCell") as! AudioAttachmentCell
                 cell.trackNameLabel.text = attachment.audio!.title
                 cell.trackAuthorLabel.text = attachment.audio!.artist
-                cell.durationLabel.text = "\(attachment.audio!.duration ?? 0)"
+                cell.durationLabel.text = attachment.audio!.duration.toAudioString
                 return cell
             case .doc:
                 break
@@ -174,6 +176,94 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         }
         let cell = UITableViewCell()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let attachment = attachments[indexPath.row]
+        if let type = attachment.type {
+            switch type {
+            case .photo:
+                break
+            case .postedPhoto:
+                break
+            case .video:
+                break
+            case .audio:
+                if currentIndexPathRow != indexPath.row {
+                    currentIndexPathRow = indexPath.row
+                    let song : AudioModel = attachment.audio!
+                    
+                    updateCurrentTrackInfo()
+                    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    //            let fileURL = documentsURL.appendingPathComponent("\(song.id)_\(song.ownerId).mp3")
+                    let sourceURL = URL(string: song.localPath == "" ? song.url : documentsURL.appendingPathComponent(song.localPath).absoluteString)
+                    print(sourceURL)
+                    DispatchQueue.global(qos: .background).async {
+                        AudioPlayer.defaultPlayer.playAudio(fromURL: sourceURL)
+                    }
+                    
+                    let player = self.storyboard?.instantiateViewController(withIdentifier: __kCC__MusicPlayerVC) as! MusicPlayerVC
+                    
+                    player.albumArt = #imageLiteral(resourceName: "AlbumPlaceholder")
+                    player.songTitle = song.title
+                    player.albumTitle = song.artist
+                    player.popupItem.progress = 0;
+                    
+                    VMusic.shared.getTrackArtwork(artist:song.artist, track: song.title, success: {
+                        path in
+                        print("path")
+                        print(path)
+                        SDWebImageDownloader.shared().downloadImage(with: URL(string: path), options: [], progress: nil, completed: { (image, data, error, _) in
+                            player.albumArt = image!
+                        })
+                    })
+                    
+                    tabBarController?.presentPopupBar(withContentViewController: player, animated: true, completion: nil)
+                    tabBarController?.popupBar.tintColor = SocialCatalystSDK.shared.getColorAppearance().mainColor
+                    tabBarController?.popupBar.imageView.layer.cornerRadius = 5
+                    tabBarController?.popupBar.progressViewStyle = .top
+                    
+                }
+            case .doc:
+                break
+            case .graffiti:
+                break
+            case .link:
+                break
+            case .note:
+                break
+            case .app:
+                break
+            case .poll:
+                break
+            case .page:
+                break
+            case .album:
+                break
+            case .photosList:
+                break
+            case .market:
+                break
+            case .marketAlbum:
+                break
+            case .sticker:
+                break
+            case .prettyCards:
+                break
+            case .event:
+                break
+            case .unknown:
+                break
+            }
+        }
+    }
+    
+    func updateCurrentTrackInfo() {
+        AudioPlayer.defaultPlayer.setPlayList(DataModelManager.filterArrayOffAnyObjectsForType<AlbumModel>(array: attachments))
+        AudioPlayer.index = currentIndexPathRow
+        
+        NotificationCenter.default.post(name: .playTrackAtIndex, object: nil, userInfo: ["index" : currentIndexPathRow])
     }
     
     @IBAction func commentsAction(_ sender: Any) {

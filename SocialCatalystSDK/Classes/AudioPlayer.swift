@@ -12,8 +12,8 @@ import MediaPlayer
 
 protocol AudioPlayerDelegate {
     func audioDidChangeTime(_ time: Int64)
-    func playerWillPlayNextAudio(_ song: VMSongModel)
-    func playerWillPlayPreviousAudio(_ song: VMSongModel)
+    func playerWillPlayNextAudio(_ song: AudioModel)
+    func playerWillPlayPreviousAudio(_ song: AudioModel)
     func receivedArtworkImage(_ image: UIImage)
 }
 
@@ -24,12 +24,12 @@ class AudioPlayer {
     var delegate: AudioPlayerDelegate?
     static var index = 0
     fileprivate var player: AVPlayer!
-    var currentAudio: VMSongModel!
+    var currentAudio: AudioModel!
     var isShuffleEnabled = false
     var isRepeatEnabled = false
     
-    fileprivate var currentPlaylist = [VMSongModel]()
-    fileprivate var reservePlaylist = [VMSongModel]()
+    fileprivate var currentPlaylist = [AudioModel]()
+    fileprivate var reservePlaylist = [AudioModel]()
     fileprivate var timeObserber: AnyObject?
     
     //MARK: - Time Observer
@@ -60,7 +60,7 @@ class AudioPlayer {
         }
         
         currentAudio = currentPlaylist[AudioPlayer.index]
-        let header = ["User-Agent":VMServerManager.userAgentForDatmusic]
+        let header = ["User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15"]
         let asset = AVURLAsset(url: url, options: ["AVURLAssetHTTPHeaderFieldsKey":header])
         let playerItem = AVPlayerItem(asset: asset)
         player = AVPlayer(playerItem:playerItem)
@@ -84,8 +84,8 @@ class AudioPlayer {
 //        } else {
 //            print("\nMetadataList is empty \n")
 //        }
-//        
-        CommandCenter.defaultCenter.setNowPlayingInfo(artworkImage: #imageLiteral(resourceName: "AlbumPlaceholder"))
+//
+        CommandCenter.defaultCenter.setNowPlayingInfo(artworkImage: UIImage(named: "AlbumPlaceholder", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)!)
     }
     
     func play() {
@@ -144,7 +144,7 @@ class AudioPlayer {
         }
     }
     
-    func setPlayList(_ playList: [VMSongModel]) {
+    func setPlayList(_ playList: [AudioModel]) {
         currentPlaylist = playList
     }
     

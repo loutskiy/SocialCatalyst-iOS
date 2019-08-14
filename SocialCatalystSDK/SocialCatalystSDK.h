@@ -15,3 +15,10 @@ FOUNDATION_EXPORT double SocialCatalystSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char SocialCatalystSDKVersionString[];
 
 #import "PFWebViewController.h"
+
+#import "LNPopupContentView.h"
+#import "LNPopupCloseButton.h"
+#import "LNPopupItem.h"
+#import "LNPopupBar.h"
+#import "LNPopupCustomBarViewController.h"
+#import "UIViewController+LNPopupSupport.h"

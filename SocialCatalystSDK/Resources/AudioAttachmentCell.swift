@@ -23,6 +23,7 @@ class AudioAttachmentCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        playButton.imageView?.tintColor = SocialCatalystSDK.shared.getColorAppearance().mainColor
         // Initialization code
     }
 

@@ -120,7 +120,7 @@ spec.preserve_paths = "SocialCatalystSDK/Info.plist"
   #  the lib prefix of their name.
   #
 
-  # spec.framework  = "SomeFramework"
+# spec.framework  = "SomeFramework"
  # spec.frameworks = "Appodeal", "FBSDKCoreKit", "MagicalRecord", "ObjectMapper", "OneSignal", "SDWebImage", "SVProgressHUD", "VK-ios-sdk"
 
   # spec.library   = "iconv"
@@ -141,6 +141,7 @@ spec.preserve_paths = "SocialCatalystSDK/Info.plist"
 spec.dependency 'ObjectMapper', '~> 3.4'
     spec.dependency 'MagicalRecord'
     spec.dependency 'SVProgressHUD'
+    spec.dependency 'Alamofire'
   spec.static_framework = true
   spec.dependency 'Appodeal'
 spec.pod_target_xcconfig = {

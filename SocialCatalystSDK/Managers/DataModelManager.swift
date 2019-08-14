@@ -22,6 +22,9 @@ class DataModelManager {
                 if let type = attach.type {
                     if type == .link, let link = attach.link, image == nil || image == "", let photo = link.photo {
                         image = getBestQualityPhotoFromObject(photo)
+                    } else if type == .video, let video = attach.video {
+                        image = getBestQualityPhotoFromVideoObject(video)
+                        break
                     } else if type == .photo, let photo = attach.photo {
                         image = getBestQualityPhotoFromObject(photo)
                         break
@@ -112,5 +115,15 @@ class DataModelManager {
             }
         }
         return nil
+    }
+    
+    class func filterArrayOffAnyObjectsForType<T>(array: [AnyObject?]) -> [T] {
+        var resultArray = [T]()
+        array.forEach { object in
+            if let item = object, let trueItem = item as? T {
+                resultArray.append(trueItem)
+            }
+        }
+        return resultArray
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class AudioModel {
+class AudioModel: Mappable {
     var id: Int!
     var ownerId: Int!
     var artist: String!
@@ -22,4 +22,23 @@ class AudioModel {
     var date: Int!
     var noSearch: Bool?
     var isHQ: Bool?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        artist <- map["artist"]
+        title <- map["title"]
+        duration <- map["duration"]
+        url <- map["url"]
+        lyricsId <- map["lyrics_id"]
+        albumId <- map["album_id"]
+        genreId <- map["genre_id"]
+        date <- map["date"]
+        noSearch <- map["no_search"]
+        isHQ <- map["is_hq"]
+    }
 }

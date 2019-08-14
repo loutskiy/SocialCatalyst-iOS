@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <LNPopupController/LNPopupItem.h>
-#import <LNPopupController/LNPopupCustomBarViewController.h>
+#import "LNPopupItem.h"
+#import "LNPopupCustomBarViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

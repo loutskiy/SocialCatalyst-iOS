@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.2)
   - Appodeal (2.5.7):
     - Appodeal/Full (= 2.5.7)
   - Appodeal/AdColonyAdapter (2.5.7):
@@ -118,6 +119,7 @@ PODS:
   - VK-ios-sdk (1.4.6)
 
 DEPENDENCIES:
+  - Alamofire
   - Appodeal
   - MagicalRecord
   - ObjectMapper (~> 3.4)
@@ -127,6 +129,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Appodeal
     - FBSDKCoreKit
     - MagicalRecord
@@ -136,6 +139,7 @@ SPEC REPOS:
     - VK-ios-sdk
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Appodeal: 33ac7acfa1ea711c8b403e194bdb8d2b0e19d538
   FBSDKCoreKit: 39748deefe37a005f983722e433be2ddcdd83ae7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
@@ -144,6 +148,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   VK-ios-sdk: 7fd48bc5aaa6b96c3197c1987eb6593f2ea67331
 
-PODFILE CHECKSUM: 013a36c98337a3368db722bb9f03e569a479ae84
+PODFILE CHECKSUM: 18035ce857af47db072873efee518b04d945a7b2
 
 COCOAPODS: 1.6.1

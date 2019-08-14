@@ -60,6 +60,7 @@ class AttachmentModel: Mappable {
         type <- (map["type"], JSONStringToAttachmentTypeTransform())
         photo <- map["photo"]
         link <- map["link"]
+        audio <- map["audio"]
     }
 }
 

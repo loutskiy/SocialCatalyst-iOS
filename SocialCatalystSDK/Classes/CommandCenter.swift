@@ -23,13 +23,13 @@ class CommandCenter: NSObject {
     
     deinit { NotificationCenter.default.removeObserver(self) }
     //AVAudioSessionCategoryOptions
-    func getUserCategoryOption() -> AVAudioSessionCategoryOptions {
+    func getUserCategoryOption() -> AVAudioSession.CategoryOptions {
         let isSetToSpeaker = UserDefaults.standard.value(forKey: "mixAudioWithOthers") as? Bool ?? true
         return isSetToSpeaker ? .defaultToSpeaker : .mixWithOthers
     }
     
     func setAudioSeccion() { //TODO: Change to .defaultToSpeaker to show music controls on Locked Screen or .mixWithOthers not to show
-        do { try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: getUserCategoryOption())
+        do { try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, options: getUserCategoryOption())
             do { try AVAudioSession.sharedInstance().setActive(true) }
             catch let error as NSError { print(error.localizedDescription) }
         }

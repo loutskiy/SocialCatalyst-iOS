@@ -10,4 +10,5 @@
     pod 'ObjectMapper', '~> 3.4'
     pod "MagicalRecord"
     pod 'SVProgressHUD'
+    pod 'Alamofire'
   end

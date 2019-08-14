@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <LNPopupController/LNPopupCloseButton.h>
+#import "LNPopupCloseButton.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

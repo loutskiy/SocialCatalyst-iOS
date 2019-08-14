@@ -6,7 +6,7 @@
 //  Copyright © 2015 Leo Natan. All rights reserved.
 //
 
-#import <LNPopupController/LNPopupItem.h>
+#import "LNPopupItem.h"
 #import "LNPopupController.h"
 
 @class LNPopupItem;
