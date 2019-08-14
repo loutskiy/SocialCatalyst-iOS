@@ -13,4 +13,14 @@ class PreviewModel {
     var photo: ImageModel?
     var graffiti: ImageModel?
     var audioMessage: AudioMessageModel?
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        photo <- map["photo"]
+        graffiti <- map["graffiti"]
+        audioMessage <- map["audio_msg"]
+    }
 }

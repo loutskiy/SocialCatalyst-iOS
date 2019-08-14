@@ -14,4 +14,15 @@ class AudioMessageModel {
     var waveform: [Int]?
     var linkOgg: String?
     var linkMp3: String?
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        duration <- map["duration"]
+        waveform <- map["waveform"]
+        linkOgg <- map["link_ogg"]
+        linkMp3 <- map["link_mp3"]
+    }
 }

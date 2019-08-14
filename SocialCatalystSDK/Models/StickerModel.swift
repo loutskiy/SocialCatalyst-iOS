@@ -14,4 +14,15 @@ class StickerModel {
     var stickerId: Int!
     var images: [ImageModel]!
     var imagesWithBackground: [ImageModel]!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        productId <- map["product_id"]
+        stickerId <- map["sticker_id"]
+        images <- map["images"]
+        imagesWithBackground <- map["images_with_background"]
+    }
 }

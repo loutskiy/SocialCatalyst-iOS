@@ -21,4 +21,17 @@ class BackgroundModel {
     var color: String!
     var width: Int?
     var height: Int?
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map){
+        id <- map["id"]
+        type <- (map["type"], JSONStringToBackgroundTypeTransform())
+        angle <- map["angle"]
+        color <- map["color"]
+        width <- map["width"]
+        height <- map["height"]
+    }
 }

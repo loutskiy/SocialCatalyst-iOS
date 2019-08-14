@@ -17,4 +17,18 @@ class NoteModel {
     var comments: Int!
     var date: Int!
     var viewUrl: String!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        title <- map["tittle"]
+        text <- map["text"]
+        comments <- map["comments"]
+        date <- map["date"]
+        viewUrl <- map["view_url"]
+    }
 }

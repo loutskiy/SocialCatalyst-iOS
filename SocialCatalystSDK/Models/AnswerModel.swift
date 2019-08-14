@@ -14,4 +14,15 @@ class AnswerModel {
     var text: String!
     var votes: Int!
     var rating: Double!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        text <- map["text"]
+        votes <- map["votes"]
+        rating <- map["rating"]
+    }
 }

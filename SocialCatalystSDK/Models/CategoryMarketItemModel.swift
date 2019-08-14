@@ -13,4 +13,14 @@ class CategoryMarketItemModel {
     var id: Int!
     var name: String!
     var section: SectionModel!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        section <- map["section"]
+    }
 }

@@ -17,4 +17,13 @@ class PrettyCardModel {
     var price: String!
     var priceOld: String!
     var button: String!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        cardId <- map["card_id"]
+        
+    }
 }

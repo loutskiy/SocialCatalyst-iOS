@@ -13,4 +13,14 @@ class PriceModel {
     var amount: Int!
     var currency: CurrencyModel!
     var text: String!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        amount <- map["amount"]
+        currency <- map["currency"]
+        text <- map["text"]
+    }
 }

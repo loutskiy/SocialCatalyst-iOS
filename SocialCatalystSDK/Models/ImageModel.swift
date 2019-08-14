@@ -27,4 +27,15 @@ class ImageModel {
     var width: Int!
     var height: Int!
     var type: ImageType?
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        url <- map["url"]
+        width <- map["width"]
+        height <- map["height"]
+        type <- (map["type"], JSONStringToImageTypeTransform())
+    }
 }

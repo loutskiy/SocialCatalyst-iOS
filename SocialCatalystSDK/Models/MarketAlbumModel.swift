@@ -16,4 +16,17 @@ class MarketAlbumModel {
     var photo: PhotoModel!
     var count: Int!
     var updatedTime: Int!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        title <- map["title"]
+        photo <- map["photo"]
+        count <- map["count"]
+        updatedTime <- map["updated_time"]
+    }
 }

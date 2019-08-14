@@ -29,4 +29,19 @@ class DocumentModel {
     var url: String!
     var date: Int!
     var type: DocumentType!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        title <- map["title"]
+        size <- map["size"]
+        ext <- map["ext"]
+        url <- map["url"]
+        date <- map["date"]
+        type <- (map["type"], JSONIntToDocumentTypeTransform())
+    }
 }

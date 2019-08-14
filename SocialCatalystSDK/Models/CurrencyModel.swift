@@ -12,4 +12,13 @@ import ObjectMapper
 class CurrencyModel {
     var id: Int!
     var name: String!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+    }
 }

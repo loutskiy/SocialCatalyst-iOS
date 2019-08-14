@@ -18,4 +18,19 @@ class AlbumModel {
     var created: Int!
     var updated: Int!
     var size: Int!
+    
+    required init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        thumb <- map["thumb"]
+        ownerId <- map["owner_id"]
+        title <- map["title"]
+        description <- map["description"]
+        created <- map["created"]
+        updated <- map["updated"]
+        size <- map["size"]
+    }
 }
