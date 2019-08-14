@@ -40,7 +40,7 @@ class VKManager {
     
     static func getGroupInfo(groupId: Int = SocialCatalystSDK.shared.getSettings().groupId, success: @escaping(_ group: VKGroup) -> Void, fail: @escaping(_ error: Error) -> Void) {
         let groupId = groupId < 0 ? groupId * -1 : groupId
-        VKApi.groups().getById([VK_API_GROUP_ID: groupId, VK_API_ACCESS_TOKEN: SocialCatalystSDK.shared.getSettings().serverKey, VK_API_FIELDS: "description,photo_100"])?.execute(resultBlock: { (response) in
+        VKApi.groups().getById([VK_API_GROUP_ID: groupId, VK_API_ACCESS_TOKEN: SocialCatalystSDK.shared.getSettings().serverKey, VK_API_FIELDS: "description,photo_100,photo_200"])?.execute(resultBlock: { (response) in
             if let groups = response?.parsedModel as? VKGroups, let group = groups.firstObject() {
                 success(group)
             }

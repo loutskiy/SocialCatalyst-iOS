@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import Appodeal
+import SDWebImage
 
 class AboutVC: ViewController {
 
@@ -16,6 +17,7 @@ class AboutVC: ViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var writeButton: UIButton!
     @IBOutlet weak var developerButton: UIButton!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class AboutVC: ViewController {
             group  in
             self.titleLabel.text = group.name
             self.descriptionLabel.text = group.description
+            self.logoImageView.sd_setImage(with: URL(string: group.photo_200), completed: nil)
         }, fail: {
             error in
             self.showAlert(title: "Ошибка", message: error.localizedDescription)
