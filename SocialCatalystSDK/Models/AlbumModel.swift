@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class AlbumModel {
+class AlbumModel: Mappable {
     var id: Int!
     var thumb: PhotoModel!
     var ownerId: Int!
@@ -18,4 +18,19 @@ class AlbumModel {
     var created: Int!
     var updated: Int!
     var size: Int!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        thumb <- map["thumb"]
+        ownerId <- map["owner_id"]
+        title <- map["title"]
+        description <- map["description"]
+        created <- map["created"]
+        updated <- map["updated"]
+        size <- map["size"]
+    }
 }

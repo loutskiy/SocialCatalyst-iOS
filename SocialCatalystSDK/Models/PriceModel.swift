@@ -9,8 +9,18 @@
 import Foundation
 import ObjectMapper
 
-class PriceModel {
+class PriceModel: Mappable {
     var amount: Int!
     var currency: CurrencyModel!
     var text: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        amount <- map["amount"]
+        currency <- map["currency"]
+        text <- map["text"]
+    }
 }

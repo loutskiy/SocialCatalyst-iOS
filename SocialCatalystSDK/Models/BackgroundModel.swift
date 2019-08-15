@@ -14,11 +14,25 @@ enum BackgroundType: String {
     case tile = "tile"
 }
 
-class BackgroundModel {
+class BackgroundModel: Mappable {
+    
     var id: Int!
     var type: BackgroundType!
     var angle: Int?
     var color: String!
     var width: Int?
     var height: Int?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map){
+        id <- map["id"]
+        type <- (map["type"], JSONStringToBackgroundTypeTransform())
+        angle <- map["angle"]
+        color <- map["color"]
+        width <- map["width"]
+        height <- map["height"]
+    }
 }

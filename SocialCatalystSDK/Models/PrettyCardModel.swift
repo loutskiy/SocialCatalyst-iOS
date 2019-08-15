@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class PrettyCardModel {
+class PrettyCardModel: Mappable {
     var cardId: Int!
     var linkUrl: String!
     var title: String!
@@ -17,4 +17,13 @@ class PrettyCardModel {
     var price: String!
     var priceOld: String!
     var button: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        cardId <- map["card_id"]
+        
+    }
 }

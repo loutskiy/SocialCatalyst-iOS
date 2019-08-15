@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class VideoModel {
+class VideoModel: Mappable {
     var id: Int!
     var ownerId: Int!
     var title: String!
@@ -39,4 +39,40 @@ class VideoModel {
     var live: Bool?
     var upcoming: Bool?
     var isFavourite: Bool!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        title <- map["tiitle"]
+        description <- map["description"]
+        duration <- map["duration"]
+        photo130 <- map["photo_130"]
+        photo320 <- map["photo_320"]
+        photo640 <- map["photo_640"]
+        photo800 <- map["photo_800"]
+        photo1280 <- map["photo_1280"]
+        firstFrame130 <- map["first_frame_130"]
+        firstFrame320 <- map["first_frame_320"]
+        firstFrame640 <- map["first_frame640"]
+        firstFrame800 <- map["first_frame_800"]
+        firstFrame1280 <- map["first_frame_1280"]
+        date <- map["date"]
+        addingDate <- map["adding_date"]
+        views <- map["views"]
+        comments <- map["comments"]
+        player <- map["player"]
+        platform <- map["platform"]
+        canEdit <- map["can_edit"]
+        canAdd <- map["can_add"]
+        isPrivate <- map["is_private"]
+        accessKey <- map["access_key"]
+        proccessing <- map["proccessing"]
+        live <- map["live"]
+        upcoming <- map["upcoming"]
+        isFavourite <- map["is_favourite"]
+    }
 }

@@ -117,13 +117,13 @@ class DataModelManager {
         return nil
     }
     
-    class func filterArrayOffAnyObjectsForType<T>(array: [AnyObject?]) -> [T] {
-        var resultArray = [T]()
-        array.forEach { object in
-            if let item = object, let trueItem = item as? T {
-                resultArray.append(trueItem)
+    class func filterAttachmentsArrayForAudio(_ array: [AttachmentModel]) -> [AudioModel] {
+        var results = [AudioModel]()
+        for object in array {
+            if object.type == AttachmentType.audio {
+                results.append(object.audio!)
             }
         }
-        return resultArray
+        return results
     }
 }

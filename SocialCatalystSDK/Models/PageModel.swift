@@ -15,7 +15,7 @@ enum WhoCanType: Int {
     case admins = 0
 }
 
-class PageModel {
+class PageModel: Mappable {
     var id: Int!
     var groupId: Int!
     var creatorId: Int!
@@ -33,4 +33,28 @@ class PageModel {
     var source: String?
     var html: String?
     var viewUrl: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        groupId <- map["group_id"]
+        creatorId <- map["creator_id"]
+        title <- map["title"]
+        currentUserCanEdit <- map["current_user_can_edit"]
+        currentUserCanEditAccess <- map["current_user_can_edit_access"]
+        whoCanView <- map["who_can_view"]
+        whoCanEdit <- map["who_can_edit"]
+        edited <- map["edited"]
+        created <- map["created"]
+        editorId <- map["editor_id"]
+        views <- map["views"]
+        parent <- map["parent"]
+        parent2 <- map["parent2"]
+        source <- map["source"]
+        html <- map["html"]
+        viewUrl <- map["view_url"]
+    }
 }

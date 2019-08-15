@@ -197,27 +197,26 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
                     updateCurrentTrackInfo()
                     let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                     //            let fileURL = documentsURL.appendingPathComponent("\(song.id)_\(song.ownerId).mp3")
-                    let sourceURL = URL(string: song.localPath == "" ? song.url : documentsURL.appendingPathComponent(song.localPath).absoluteString)
+                    let sourceURL = URL(string:song.url)
                     print(sourceURL)
                     DispatchQueue.global(qos: .background).async {
                         AudioPlayer.defaultPlayer.playAudio(fromURL: sourceURL)
                     }
                     
-                    let player = self.storyboard?.instantiateViewController(withIdentifier: __kCC__MusicPlayerVC) as! MusicPlayerVC
+                    let player = self.storyboard?.instantiateViewController(withIdentifier: "MusicPlayerVC") as! MusicPlayerVC
                     
-                    player.albumArt = #imageLiteral(resourceName: "AlbumPlaceholder")
+                    player.albumArt = UIImage(named: "AlbumPlaceholder", in: SocialCatalystSDK.getBundle(), compatibleWith: nil)!
                     player.songTitle = song.title
                     player.albumTitle = song.artist
-                    player.popupItem.progress = 0;
+                    player.popupItem.progress = 0
                     
-                    VMusic.shared.getTrackArtwork(artist:song.artist, track: song.title, success: {
-                        path in
-                        print("path")
-                        print(path)
-                        SDWebImageDownloader.shared().downloadImage(with: URL(string: path), options: [], progress: nil, completed: { (image, data, error, _) in
+                    VKManager.sendRequestToLastFM(artist: song.artist, track: song.title, success: { (path) in
+                        SDWebImageDownloader.shared.downloadImage(with: URL(string: path), options: [], progress: nil, completed: { (image, data, error, _) in
                             player.albumArt = image!
                         })
-                    })
+                    }) { (error) in
+                        self.showAlert(title: "Ошибка", message: error.localizedDescription)
+                    }
                     
                     tabBarController?.presentPopupBar(withContentViewController: player, animated: true, completion: nil)
                     tabBarController?.popupBar.tintColor = SocialCatalystSDK.shared.getColorAppearance().mainColor
@@ -260,7 +259,7 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateCurrentTrackInfo() {
-        AudioPlayer.defaultPlayer.setPlayList(DataModelManager.filterArrayOffAnyObjectsForType<AlbumModel>(array: attachments))
+        AudioPlayer.defaultPlayer.setPlayList(DataModelManager.filterAttachmentsArrayForAudio(attachments))
         AudioPlayer.index = currentIndexPathRow
         
         NotificationCenter.default.post(name: .playTrackAtIndex, object: nil, userInfo: ["index" : currentIndexPathRow])

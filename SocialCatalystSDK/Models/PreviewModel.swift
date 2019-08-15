@@ -9,8 +9,18 @@
 import Foundation
 import ObjectMapper
 
-class PreviewModel {
+class PreviewModel: Mappable {
     var photo: ImageModel?
     var graffiti: ImageModel?
     var audioMessage: AudioMessageModel?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        photo <- map["photo"]
+        graffiti <- map["graffiti"]
+        audioMessage <- map["audio_msg"]
+    }
 }

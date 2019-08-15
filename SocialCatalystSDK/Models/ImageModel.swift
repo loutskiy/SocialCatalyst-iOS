@@ -22,9 +22,20 @@ enum ImageType: String {
     case w = "w"
 }
 
-class ImageModel {
+class ImageModel: Mappable {
     var url: String!
     var width: Int!
     var height: Int!
     var type: ImageType?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        url <- map["url"]
+        width <- map["width"]
+        height <- map["height"]
+        type <- (map["type"], JSONStringToImageTypeTransform())
+    }
 }

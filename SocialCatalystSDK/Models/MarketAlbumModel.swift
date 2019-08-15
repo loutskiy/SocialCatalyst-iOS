@@ -9,11 +9,25 @@
 import Foundation
 import ObjectMapper
 
-class MarketAlbumModel {
+class MarketAlbumModel: Mappable {
+    
     var id: Int!
     var ownerId: Int!
     var title: String!
     var photo: PhotoModel!
     var count: Int!
     var updatedTime: Int!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        ownerId <- map["owner_id"]
+        title <- map["title"]
+        photo <- map["photo"]
+        count <- map["count"]
+        updatedTime <- map["updated_time"]
+    }
 }

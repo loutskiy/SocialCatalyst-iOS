@@ -15,7 +15,8 @@ enum AvailabilityType: Int {
     case unavailable = 2
 }
 
-class MarketItemModel {
+class MarketItemModel: Mappable {
+    
     var id: Int!
     var ownerId: Int!
     var title: String!
@@ -32,4 +33,11 @@ class MarketItemModel {
     var likes: LikesModel?
     var url: String?
     var buttonTitle: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+    }
 }

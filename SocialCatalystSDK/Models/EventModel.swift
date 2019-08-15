@@ -15,7 +15,7 @@ enum MemberStatus: Int {
     case no
 }
 
-class EventModel {
+class EventModel: Mappable {
     var id: Int!
     var time: Int!
     var memberStatus: MemberStatus!
@@ -24,4 +24,11 @@ class EventModel {
     var text: String?
     var buttonText: String?
     var friends: [Int]?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+    }
 }

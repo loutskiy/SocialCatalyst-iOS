@@ -9,9 +9,20 @@
 import Foundation
 import ObjectMapper
 
-class AnswerModel {
+class AnswerModel: Mappable {
     var id: Int!
     var text: String!
     var votes: Int!
     var rating: Double!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        text <- map["text"]
+        votes <- map["votes"]
+        rating <- map["rating"]
+    }
 }

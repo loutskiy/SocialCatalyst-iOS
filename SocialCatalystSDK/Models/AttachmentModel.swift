@@ -59,8 +59,23 @@ class AttachmentModel: Mappable {
     func mapping(map: Map) {
         type <- (map["type"], JSONStringToAttachmentTypeTransform())
         photo <- map["photo"]
-        link <- map["link"]
+        postedPhoto <- map["posted_photo"]
+        video <- map["video"]
         audio <- map["audio"]
+        doc <- map["doc"]
+        graffiti <- map["graffiti"]
+        link <- map["link"]
+        note <- map["note"]
+        app <- map["app"]
+        poll <- map["poll"]
+        page <- map["page"]
+        album <- map["album"]
+        photosList <- map["photos_list"]
+        market <- map["market"]
+        marketAlbum <- map["market_album"]
+        sticker <- map["sticker"]
+        prettyCards <- map["pretty_cards"]
+        event <- map["event"]
     }
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class TopicModel {
+class TopicModel: Mappable {
     var id: Int!
     var title: String!
     var created: Int!
@@ -21,4 +21,11 @@ class TopicModel {
     var comments: Int!
     var firstComment: String?
     var lastComment: String?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+    }
 }

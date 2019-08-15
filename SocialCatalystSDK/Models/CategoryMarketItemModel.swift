@@ -9,8 +9,19 @@
 import Foundation
 import ObjectMapper
 
-class CategoryMarketItemModel {
+class CategoryMarketItemModel: Mappable {
+    
     var id: Int!
     var name: String!
     var section: SectionModel!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        section <- map["section"]
+    }
 }

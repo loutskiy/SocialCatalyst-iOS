@@ -9,6 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class PrettyCardsModel {
+class PrettyCardsModel: Mappable {
+    
     var cards: [PrettyCardModel]!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+    }
 }
