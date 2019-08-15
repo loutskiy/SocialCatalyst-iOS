@@ -24,6 +24,11 @@ class PrettyCardModel: Mappable {
     
     func mapping(map: Map) {
         cardId <- map["card_id"]
-        
+        linkUrl <- map["link_url"]
+        title <- map["title"]
+        images <- map["images"]
+        price <- map["price"]
+        priceOld <- map["price_old"]
+        button <- map["button"]
     }
 }

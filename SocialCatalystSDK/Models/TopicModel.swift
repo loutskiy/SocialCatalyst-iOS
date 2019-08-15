@@ -27,5 +27,16 @@ class TopicModel: Mappable {
     }
     
     func mapping(map: Map) {
+        id <- map["id"]
+        title <- map["title"]
+        created <- map["created"]
+        createdBy <- map["created_by"]
+        updated <- map["updated"]
+        updatedBy <- map["updated_by"]
+        isClosed <- map["is_closed"]
+        isFixed <- map["is_fixed"]
+        comments <- map["comments"]
+        firstComment <- map["first_comment"]
+        lastComment <- map["last_comment"]
     }
 }

@@ -18,5 +18,6 @@ class PrettyCardsModel: Mappable {
     }
     
     func mapping(map: Map) {
+        cards <- map["cards"]
     }
 }
