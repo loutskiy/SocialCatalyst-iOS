@@ -145,4 +145,19 @@ class VKManager {
             }
         }
     }
+    
+    static func getVideo(_ video: VideoModel, success: @escaping(_ video: VideoModel) -> Void, fail: @escaping(_ error: Error) -> Void) {
+        let request = VKRequest.init(method: "video.get", parameters: [
+            VK_API_ACCESS_TOKEN: SocialCatalystSDK.shared.getSettings().serverKey,
+            VK_API_OWNER_ID: video.ownerId,
+            "videos": "\(video.ownerId ?? 0)_\(video.id ?? 0)\(video.accessKey != nil ? "_\(video.accessKey!)" : "")",
+            VK_API_COUNT: 1,
+            VK_API_EXTENDED: true
+            ])
+        request?.execute(resultBlock: { (response) in
+            print(response?.responseString)
+        }, errorBlock: { (error) in
+            fail(error!)
+        })
+    }
 }

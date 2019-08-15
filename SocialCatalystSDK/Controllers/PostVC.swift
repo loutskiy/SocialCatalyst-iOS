@@ -188,6 +188,13 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
             case .postedPhoto:
                 break
             case .video:
+                VKManager.getVideo(attachment.video!, success: {
+                    video in
+                }, fail: {
+                    error in
+                    print(error.localizedDescription)
+                })
+                print(attachment.video?.toJSONString())
                 break
             case .audio:
                 if currentIndexPathRow != indexPath.row {
