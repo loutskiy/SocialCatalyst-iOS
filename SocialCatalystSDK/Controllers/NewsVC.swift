@@ -23,7 +23,7 @@ class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = SocialCatalystSDK.shared.getSettings().feedTitleName
+        self.navigationItem.title = SocialCatalystSDK.shared.getSettings().feedTitleName
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         tableView.register(UINib(nibName: "PostCell", bundle: SocialCatalystSDK.getBundle()), forCellReuseIdentifier: "cell")
         tableView.refreshControl = refreshControl
@@ -31,11 +31,12 @@ class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.feed) {
 //            Appodeal.showAd(.bannerBottom, forPlacement: "FEED", rootViewController: self)
-            self.tableView.tableFooterView = newView
+//            self.tableView.tableFooterView = newView
+            self.tableView.tableHeaderView = newView
             newView.adUnitID = "ca-app-pub-8849088710729196/5147472672"
             newView.rootViewController = self
             newView.load(GADRequest())
-            newView.backgroundColor = .black
+            newView.backgroundColor = .white
             newView.frame.size.height = 60
             newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
             newView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

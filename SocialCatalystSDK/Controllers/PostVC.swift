@@ -9,6 +9,7 @@
 import UIKit
 import VK_ios_sdk
 import SDWebImage
+import GoogleMobileAds
 //import Appodeal
 
 class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
@@ -27,7 +28,8 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableHeaderView: UIView!
-    
+    let newView = GADBannerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Запись"
@@ -39,6 +41,17 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         setUIFromPost()
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.post) {
+            view.addSubview(newView)
+            newView.adUnitID = "ca-app-pub-8849088710729196/5147472672"
+            newView.rootViewController = self
+            newView.load(GADRequest())
+            newView.backgroundColor = .white
+            newView.frame = CGRect(x: 0, y: self.view.frame.size.height - 60, width: self.view.frame.size.width, height: 60)
+//            newView.frame.size.height = 60
+//            newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//            newView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//            newView.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//            newView.topAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
 //            Appodeal.showAd(.bannerBottom, forPlacement: "POST", rootViewController: self)
         }
     }

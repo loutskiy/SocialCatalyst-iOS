@@ -141,6 +141,11 @@
                                                     <constraint firstAttribute="width" constant="128" id="rhf-bb-aSd"/>
                                                     <constraint firstAttribute="height" constant="128" id="svt-xn-2oa"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="64"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjG-ap-dO9">
                                                 <rect key="frame" x="20" y="176" width="335" height="30"/>
@@ -527,7 +532,7 @@
         <!--Music PlayerVC-->
         <scene sceneID="kf8-yo-P0n">
             <objects>
-                <viewController storyboardIdentifier="MusicPlayerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W1D-6B-XMt" customClass="MusicPlayerVC" customModule="VMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicPlayerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W1D-6B-XMt" customClass="MusicPlayerVC" customModule="SocialCatalystSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tuA-F7-el0"/>
                         <viewControllerLayoutGuide type="bottom" id="xCG-sm-Pwg"/>

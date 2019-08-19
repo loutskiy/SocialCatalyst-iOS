@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 //import Appodeal
 
 class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
@@ -15,7 +16,8 @@ class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     private let refreshControl = UIRefreshControl()
     
     var news = [PostModel]()
-    
+    let newView = GADBannerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
@@ -24,6 +26,16 @@ class FavouriteVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.refreshControl = refreshControl
 
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.favourite) {
+            self.tableView.tableHeaderView = newView
+            newView.adUnitID = "ca-app-pub-8849088710729196/5147472672"
+            newView.rootViewController = self
+            newView.load(GADRequest())
+            newView.backgroundColor = .white
+            newView.frame.size.height = 60
+            newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            newView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            newView.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            newView.topAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
 //            Appodeal.showAd(.bannerBottom, forPlacement: "FAVORITE", rootViewController: self)
         }
     }
