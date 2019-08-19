@@ -30,5 +30,13 @@ class EventModel: Mappable {
     }
     
     func mapping(map: Map) {
+        id <- map["id"]
+        time <- map["time"]
+        memberStatus <- map["member_status"]
+        isFavorite <- map["is_favorite"]
+        address <- map["address"]
+        text <- map["text"]
+        buttonText <- map["button_text"]
+        friends <- map["friends"]
     }
 }
