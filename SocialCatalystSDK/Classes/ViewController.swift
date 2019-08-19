@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class ViewController: UIViewController {
+    
+    let scopes = [VK_PER_PHOTOS, VK_PER_AUDIO, VK_PER_VIDEO, VK_PER_PAGES, VK_PER_WALL, VK_PER_OFFLINE, VK_PER_DOCS, VK_PER_GROUPS, VK_PER_NOTIFICATIONS]
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return SocialCatalystSDK.shared.getColorAppearance().statusBarStyle
@@ -42,5 +45,13 @@ class ViewController: UIViewController {
         vc.post = post
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func checkVKSession() {
+        VKSdk.wakeUpSession(scopes) { (state, error) in
+            if state == .authorized {
+                
+            }
+        }
     }
 }

@@ -25,6 +25,12 @@ public enum AdsModes {
     case comments
 }
 
+public enum AdsEngine {
+    case appodeal
+    case google
+    case none
+}
+
 public protocol SettingsScheme {
     var appId: String { get set }
     var groupId: Int { get set }
@@ -38,7 +44,9 @@ public protocol SettingsScheme {
     var emailSubject: String { get set }
     var availablePostView: Bool { get set }
     var adsModes: [AdsModes] { get set }
+    var adsEngine: AdsEngine { get set }
     var feedTitleName: String { get set }
     var availablePushNotifications: Bool { get set }
-    var oneSignalKey: String { get set }
+    var oneSignalKey: String? { get set }
+    var googleAdmobKey: String? { get set }
 }

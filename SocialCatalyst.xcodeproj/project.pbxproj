@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -93,6 +93,9 @@
 		C456B23723035E8D00AEBCD1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B23523035E8C00AEBCD1 /* AudioPlayer.swift */; };
 		C456B23823035E8D00AEBCD1 /* CommandCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B23623035E8D00AEBCD1 /* CommandCenter.swift */; };
 		C456B23A2303606000AEBCD1 /* LFMImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B2392303606000AEBCD1 /* LFMImageModel.swift */; };
+		C470283D230729C900493ADF /* ExtensionScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470283C230729C900493ADF /* ExtensionScheme.swift */; };
+		C470283F23072AB500493ADF /* SCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470283E23072AB500493ADF /* SCView.swift */; };
+		C470284123072C7700493ADF /* InventarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470284023072C7700493ADF /* InventarVC.swift */; };
 		C4BFE3DC2304282000485E36 /* LNPopupCloseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BFE3D02304274A00485E36 /* LNPopupCloseButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4BFE3DD2304282000485E36 /* LNPopupContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BFE3D12304274A00485E36 /* LNPopupContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4BFE3DE2304282000485E36 /* LNPopupBar.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BFE3D22304274A00485E36 /* LNPopupBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,6 +177,9 @@
 		C456B23523035E8C00AEBCD1 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		C456B23623035E8D00AEBCD1 /* CommandCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCenter.swift; sourceTree = "<group>"; };
 		C456B2392303606000AEBCD1 /* LFMImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFMImageModel.swift; sourceTree = "<group>"; };
+		C470283C230729C900493ADF /* ExtensionScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionScheme.swift; sourceTree = "<group>"; };
+		C470283E23072AB500493ADF /* SCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCView.swift; sourceTree = "<group>"; };
+		C470284023072C7700493ADF /* InventarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventarVC.swift; sourceTree = "<group>"; };
 		C4AC425722F770720058EEBA /* VKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKManager.swift; sourceTree = "<group>"; };
 		C4AC425922F77A980058EEBA /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		C4AC425B22F77B540058EEBA /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 				C4218DE222FB08DE00A643FD /* CommentsVC.swift */,
 				C4218DE422FB08E800A643FD /* PostVC.swift */,
 				C456B23023035C8B00AEBCD1 /* MusicPlayerVC.swift */,
+				C470284023072C7700493ADF /* InventarVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,6 +367,7 @@
 			children = (
 				C4E0261922F4E1FE006BD403 /* ColorScheme.swift */,
 				C4218DBA22F9EF0400A643FD /* SettingsScheme.swift */,
+				C470283C230729C900493ADF /* ExtensionScheme.swift */,
 			);
 			path = Schemes;
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 				C4400F4B22FF2B20003698ED /* JSONIntToAvailabilityTypeTransform.swift */,
 				C456B23523035E8C00AEBCD1 /* AudioPlayer.swift */,
 				C456B23623035E8D00AEBCD1 /* CommandCenter.swift */,
+				C470283E23072AB500493ADF /* SCView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -722,6 +731,7 @@
 				C4400F9F22FF470D003698ED /* PrettyCardsModel.swift in Sources */,
 				C4400F9722FF470D003698ED /* MarketItemModel.swift in Sources */,
 				C4400F6822FF46F3003698ED /* JSONIntToAvailabilityTypeTransform.swift in Sources */,
+				C470284123072C7700493ADF /* InventarVC.swift in Sources */,
 				C4400F7F22FF470D003698ED /* PostModel.swift in Sources */,
 				C4400F7622FF4703003698ED /* CommentsVC.swift in Sources */,
 				C4400F6B22FF46F9003698ED /* DateManager.swift in Sources */,
@@ -731,6 +741,7 @@
 				C4400F8522FF470D003698ED /* LinkModel.swift in Sources */,
 				C4400F8C22FF470D003698ED /* VideoModel.swift in Sources */,
 				C4400F7C22FF4707003698ED /* MediaAttachmentCell.swift in Sources */,
+				C470283D230729C900493ADF /* ExtensionScheme.swift in Sources */,
 				C4400F7422FF4703003698ED /* AboutVC.swift in Sources */,
 				C4400F9E22FF470D003698ED /* ImageModel.swift in Sources */,
 				C4400F7522FF4703003698ED /* FavouriteVC.swift in Sources */,
@@ -742,6 +753,7 @@
 				C4400F9822FF470D003698ED /* PriceModel.swift in Sources */,
 				C4400F8822FF470D003698ED /* GraffitiModel.swift in Sources */,
 				C4400F8422FF470D003698ED /* PhotoModel.swift in Sources */,
+				C470283F23072AB500493ADF /* SCView.swift in Sources */,
 				C4400F9622FF470D003698ED /* AlbumModel.swift in Sources */,
 				C4400F9022FF470D003698ED /* AudioMessageModel.swift in Sources */,
 				C4400F9C22FF470D003698ED /* MarketAlbumModel.swift in Sources */,

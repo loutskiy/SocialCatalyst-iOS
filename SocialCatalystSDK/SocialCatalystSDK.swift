@@ -21,6 +21,8 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
     
     private var settings: SettingsScheme!
     
+    private var extensions: ExtensionScheme?
+    
     func isEnabledAdsForPage(_ page: AdsModes) -> Bool {
         if settings.adsModes.contains(page) {
             return true
@@ -35,9 +37,10 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
     ///   - colorScheme: Your color scheme
     ///   - settingsScheme: Your settings scheme
     ///   - configuredWith: uiwindow object for display ui of SDK
-    public class func setSocialCatalystConfiguration(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, colorScheme: ColorScheme, settingsScheme: SettingsScheme, configuredWith: @escaping(_ window: UIWindow) -> Void) {
+    public class func setSocialCatalystConfiguration(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, colorScheme: ColorScheme, settingsScheme: SettingsScheme, extensions: ExtensionScheme? = nil, configuredWith: @escaping(_ window: UIWindow) -> Void) {
         SocialCatalystSDK.shared.colorAppearance = colorScheme
         SocialCatalystSDK.shared.settings = settingsScheme
+        SocialCatalystSDK.shared.extensions = extensions
         
         let managedObjectModel = NSManagedObjectModel.mergedModel(from: [getBundle()])
         MagicalRecord.setShouldAutoCreateManagedObjectModel(false)
