@@ -143,7 +143,7 @@ spec.dependency 'ObjectMapper', '~> 3.4'
     spec.dependency 'SVProgressHUD'
     spec.dependency 'Alamofire'
   spec.static_framework = true
-  spec.dependency 'Appodeal'
+spec.dependency 'Google-Mobile-Ads-SDK'
 spec.pod_target_xcconfig = {
   'INFOPLIST_FILE' => '${PODS_TARGET_SRCROOT}/SocialCatalystSDK/Info.plist'
   }

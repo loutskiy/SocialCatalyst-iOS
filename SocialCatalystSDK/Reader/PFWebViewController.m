@@ -9,7 +9,7 @@
 #import "PFWebViewController.h"
 #import <WebKit/WebKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <Appodeal/Appodeal.h>
+//#import <Appodeal/Appodeal.h>
 
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
@@ -75,7 +75,7 @@
     
     [self loadWebContent];
     
-    [Appodeal showAd:AppodealShowStyleBannerBottom rootViewController:self];
+//    [Appodeal showAd:AppodealShowStyleBannerBottom rootViewController:self];
 
 }
 

@@ -8,7 +8,8 @@
 
 import UIKit
 import SDWebImage
-import Appodeal
+//import Appodeal
+import GoogleMobileAds
 
 class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,7 +19,8 @@ class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     private var news = [PostModel]()
     private var offset = 0
     private var isEnd = false
-    
+    let newView = GADBannerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = SocialCatalystSDK.shared.getSettings().feedTitleName
@@ -28,7 +30,17 @@ class NewsVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         loadData()
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.feed) {
-            Appodeal.showAd(.bannerBottom, forPlacement: "FEED", rootViewController: self)
+//            Appodeal.showAd(.bannerBottom, forPlacement: "FEED", rootViewController: self)
+            self.tableView.tableFooterView = newView
+            newView.adUnitID = "ca-app-pub-8849088710729196/5147472672"
+            newView.rootViewController = self
+            newView.load(GADRequest())
+            newView.backgroundColor = .black
+            newView.frame.size.height = 60
+            newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            newView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            newView.trailingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            newView.topAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
         }
     }
     

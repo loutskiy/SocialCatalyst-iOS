@@ -9,7 +9,7 @@
 import UIKit
 import VK_ios_sdk
 import SDWebImage
-import Appodeal
+//import Appodeal
 
 class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -39,7 +39,7 @@ class PostVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         setUIFromPost()
         
         if SocialCatalystSDK.shared.isEnabledAdsForPage(.post) {
-            Appodeal.showAd(.bannerBottom, forPlacement: "POST", rootViewController: self)
+//            Appodeal.showAd(.bannerBottom, forPlacement: "POST", rootViewController: self)
         }
     }
     

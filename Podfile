@@ -4,7 +4,7 @@
   use_frameworks!
 
   target 'SocialCatalystSDK' do
-    pod 'Appodeal'
+    pod 'Google-Mobile-Ads-SDK'
     pod "VK-ios-sdk"
     pod 'SDWebImage'
     pod 'ObjectMapper', '~> 3.4'

@@ -1,116 +1,37 @@
 PODS:
   - Alamofire (4.8.2)
-  - Appodeal (2.5.7):
-    - Appodeal/Full (= 2.5.7)
-  - Appodeal/AdColonyAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/AdExchangeAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/AmazonAdsAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/AppLovinAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/Banner (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/AmazonAdsAdapter
-    - Appodeal/AppLovinAdapter
-    - Appodeal/FacebookAudienceAdapter
-    - Appodeal/GoogleAdMobAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/InnerActiveAdapter
-    - Appodeal/MyTargetAdapter
-    - Appodeal/OpenXAdapter
-    - Appodeal/SmaatoAdapter
-    - Appodeal/StartAppAdapter
-    - Appodeal/YandexAdapter
-  - Appodeal/ChartboostAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Core (2.5.7)
-  - Appodeal/FacebookAudienceAdapter (2.5.7):
-    - Appodeal/Core
-    - FBSDKCoreKit/Basics
-  - Appodeal/FlurryAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Full (2.5.7):
-    - Appodeal/Banner
-    - Appodeal/Core
-    - Appodeal/Interstitial
-    - Appodeal/Native
-    - Appodeal/Video
-  - Appodeal/GoogleAdMobAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/InMobiAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/InnerActiveAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/Interstitial (2.5.7):
-    - Appodeal/AmazonAdsAdapter
-    - Appodeal/FacebookAudienceAdapter
-    - Appodeal/GoogleAdMobAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/Video
-    - Appodeal/YandexAdapter
-  - Appodeal/IronSource (2.5.7):
-    - Appodeal/Core
-  - Appodeal/MintegralAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/MyTargetAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Native (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/AppLovinAdapter
-    - Appodeal/FacebookAudienceAdapter
-    - Appodeal/FlurryAdapter
-    - Appodeal/GoogleAdMobAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/InnerActiveAdapter
-    - Appodeal/MyTargetAdapter
-    - Appodeal/PubnativeAdapter
-    - Appodeal/SmaatoAdapter
-    - Appodeal/StartAppAdapter
-  - Appodeal/OpenXAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/PubnativeAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/SmaatoAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/StartAppAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/TapjoyAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/UnityAdapter (2.5.7):
-    - Appodeal/Core
-  - Appodeal/Video (2.5.7):
-    - Appodeal/AdColonyAdapter
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/AppLovinAdapter
-    - Appodeal/ChartboostAdapter
-    - Appodeal/InMobiAdapter
-    - Appodeal/InnerActiveAdapter
-    - Appodeal/IronSource
-    - Appodeal/MintegralAdapter
-    - Appodeal/MyTargetAdapter
-    - Appodeal/OpenXAdapter
-    - Appodeal/SmaatoAdapter
-    - Appodeal/StartAppAdapter
-    - Appodeal/TapjoyAdapter
-    - Appodeal/UnityAdapter
-    - Appodeal/VungleAdapter
-  - Appodeal/VungleAdapter (2.5.7):
-    - Appodeal/AdExchangeAdapter
-    - Appodeal/Core
-  - Appodeal/YandexAdapter (2.5.7):
-    - Appodeal/Core
-  - FBSDKCoreKit/Basics (5.3.0)
+  - Google-Mobile-Ads-SDK (7.48.0):
+    - GoogleAppMeasurement (~> 6.0)
+  - GoogleAppMeasurement (6.1.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (6.2.5):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.2.5)
+  - GoogleUtilities/Logger (6.2.5):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.2.5):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.2.5):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.2.5)"
+  - GoogleUtilities/Reachability (6.2.5):
+    - GoogleUtilities/Logger
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - ObjectMapper (3.5.1)
   - SDWebImage (5.1.0):
     - SDWebImage/Core (= 5.1.0)
@@ -120,7 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Appodeal
+  - Google-Mobile-Ads-SDK
   - MagicalRecord
   - ObjectMapper (~> 3.4)
   - SDWebImage
@@ -130,9 +51,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Appodeal
-    - FBSDKCoreKit
+    - Google-Mobile-Ads-SDK
+    - GoogleAppMeasurement
+    - GoogleUtilities
     - MagicalRecord
+    - nanopb
     - ObjectMapper
     - SDWebImage
     - SVProgressHUD
@@ -140,14 +63,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Appodeal: 33ac7acfa1ea711c8b403e194bdb8d2b0e19d538
-  FBSDKCoreKit: 39748deefe37a005f983722e433be2ddcdd83ae7
+  Google-Mobile-Ads-SDK: 709fa768c3ba8e8b260d8cb085c607097fd3f79d
+  GoogleAppMeasurement: 47285fa897e5a125df56b9ef8750a1d81e4598a8
+  GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   VK-ios-sdk: 7fd48bc5aaa6b96c3197c1987eb6593f2ea67331
 
-PODFILE CHECKSUM: 18035ce857af47db072873efee518b04d945a7b2
+PODFILE CHECKSUM: 75260d4b57ac3797283bfe8383e94343b1731aaf
 
 COCOAPODS: 1.7.5

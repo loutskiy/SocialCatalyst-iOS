@@ -8,8 +8,9 @@
 
 import Foundation
 import VK_ios_sdk
-import Appodeal
+//import Appodeal
 import MagicalRecord
+import GoogleMobileAds
 //import OneSignal
 
 public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
@@ -47,8 +48,10 @@ public class SocialCatalystSDK: NSObject, UIApplicationDelegate {
         MagicalRecord.setLoggingLevel(.off)
         VKSdk.initialize(withAppId: SocialCatalystSDK.shared.getSettings().appId)
 //
-        Appodeal.setLogLevel(.verbose)
-        Appodeal.initialize(withApiKey: SocialCatalystSDK.shared.getSettings().appodealKey, types: [.banner, .nativeAd])
+//        Appodeal.setLogLevel(.verbose)
+//        Appodeal.initialize(withApiKey: SocialCatalystSDK.shared.getSettings().appodealKey, types: [.banner, .nativeAd])
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         if SocialCatalystSDK.shared.getSettings().availablePushNotifications {
 //            let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
